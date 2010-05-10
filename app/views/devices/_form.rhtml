@@ -1,0 +1,21 @@
+<%= error_messages_for 'area' %>
+<div style="position: relative;" id="ticket-form">
+  <dl class="form lbl-inline clear" style="" id="ticket-title">
+    <dt><label for="name">名称*：</label></dt>
+<dd><%= f.text_field :name, :size => 30, :tabindex => 1 %></dd>
+  </dl>
+  <dl class="form">
+    <dt>
+      <label for="description">描述*：</label>
+    </dt>
+    <dd>
+      <%= f.text_area :description, :cols => 40, :rows => 15, :style => "width:100%", :tabindex => 2 %>
+      <script type="text/javascript">
+        CKEDITOR.replace( 'devicetype[description]',
+        {
+          customConfig : '/javascripts/ckeditor_config.js'
+        });
+      </script>
+    </dd>
+  </dl>
+</div>

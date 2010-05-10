@@ -1,0 +1,250 @@
+body {
+  margin: 0;
+  text-align: left;
+  padding: 0;
+  font: normal 1.3em/1.5em "Helvetica Neue", Helvetica, "Lucida Grande", Arial, sans-serif;
+  background: #60A4D3;
+  color: #333;
+  min-width: 900px;
+}
+
+ul, li, form, input, dt, dl, dd, ol, div, p, 
+blockquote, h1, h2, h3, h4, h5, h6, a {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+}
+
+#header, #project-nav, #action-nav, .gbar, #ticket-form, #devmode, 
+.btns, #footer, #sbar, #quick-search-bar, .sentence, .bulk_checkbox, .bulk_check_header,
+.pagination, .form-tip {
+  display: none;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+.greet-cnt a:link:after, .greet-cnt a:visited:after, .desc a:link:after {
+  content: " (" attr(href) ") ";
+}
+
+.avatar, .gleft {
+  float: left !important;
+}
+
+.avatar, .tinyavatar {
+  background: #fff;
+  padding: 3px;
+  float: left;
+  margin: 0 5px 0 0;
+  max-height: 40px;
+  max-width: 40px;
+  overflow: hidden;
+  border: 1px solid #eee;
+}
+
+.tinyavatar {
+  padding: 1px;
+  width: 20px;
+  height: 20px;
+  float: none;
+  vertical-align: middle;
+  border: 1px solid #eee;
+}
+
+.ticket-meta {
+  float: right;
+}
+
+.greet {
+  padding: 10px;
+  position: relative;
+}
+
+.greet h2 {
+  margin: 0 !important;
+  border: none !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 140% !important;
+}
+
+.greet .date, .greet .gmeta {
+  font-size: 92%;
+  color: #ddf1ff;
+}
+
+.gleft, .tleft {
+  float: left;
+  width: 55px;
+}
+
+.gcnt, .tcnt {
+  margin-left: 55px;
+  margin-right: 70px;
+}
+
+.tcnt a.edit {
+  color: #6AC;
+  font-weight: normal;
+}
+
+.tcnt a.edit:hover { color: #07b;}
+
+.greet-cnt p {
+  margin-bottom: 7px;
+  color: #555 !important;
+}
+
+.greet-cnt ul, .greet-cnt ol {
+  padding-left: 25px;
+  margin: 5px;
+}
+
+#ticket {
+  padding-top: 10px;
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+}
+
+.changes h3 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.description {
+  padding: 0;
+  margin: 0;
+  font-size: 110%;
+}
+
+.changes {
+  margin-top: 40px !important;
+}
+
+.changes h3 {
+  padding: 5px;
+}
+
+.changes h4 {
+  position: relative;
+}
+
+.changes .event-date, .response .event-date {
+  position: static;
+  display: block;
+  color: #888;
+}
+
+.changes .event-date a {
+  color: #999;
+  font-weight: normal;
+}
+
+.change {
+  color: #777;
+  font-style: normal;
+}
+
+ul.info {
+  list-style: none;
+  margin: 0 0 40px 0;
+  padding: 0;
+}
+
+ul.info li {
+  padding: 5px;
+}
+
+ul.info ul li {
+  border: none;
+  list-style: none;
+}
+
+.ticket-changes {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.info .desc {
+  margin-top: 10px;
+  color: #555;
+}
+
+ul.ticket-changes li {
+  display: block;
+  color: #777;
+  font-weight: bold;
+  padding: 5px 0;
+  border-bottom: 1px dotted #ccc !important;
+  font-size: 92%;
+}
+
+.ticketnum {
+  font-weight: bold;
+  font-size: 130%;
+  background: #005795;
+  padding: 20px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+/*------------------------------------------------------------------------------------
+  @group milestone view
+------------------------------------------------------------------------------------*/
+
+h3.uname {
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+ul.ticket-list {
+  margin-left: 10px;
+  font-size: 90% !important;
+}
+
+.tnum2 {
+  font-weight: bold;
+  color: #000;
+}
+
+.prioritize {
+  display: none;
+}
+
+/* @end */
+
+
+/*------------------------------------------------------------------------------------
+  @group ticket index
+------------------------------------------------------------------------------------*/
+
+.issues {
+  width: 100%;
+  font-size: 0.7em;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.issues th {
+  border-bottom: 2px solid #ccc;
+}
+
+.issues td {
+  border-bottom: 1px solid #eee;
+}
+
+.issues td.tnum {
+  font-weight: bold;
+  text-align: center;
+  width: 75px;
+}
+
+.issues td.issue {
+  font-weight: bold;
+}
+
+/* @end */

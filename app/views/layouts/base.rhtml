@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html class="csshidden" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+      <title>设备中心</title>
+      <%= stylesheet_link_tag "core", :media => "all" %>
+
+      <%= javascript_include_tag "core" %>
+      <%= javascript_include_tag "application" %>
+      <%= javascript_include_tag "code" %>
+      <%= javascript_include_tag "/ckeditor/ckeditor.js" %>
+  </head>
+  <body class="msie projects-overview">
+    <!-- container -->
+    <div id="container">
+      <!-- header -->
+      <div id="header" class="clear">
+        <ul id="sec-nav">
+        </ul>
+        <div id="titles">
+          <h1> <strong id="account-name"><a href="">DeviceHub</a></strong> <a href="" class="pname">DeviceHub</a> </h1>
+        </div>
+        <!-- userbadge -->
+        <div id="rheader">
+          <div id="userbadge"> <a href=""><img alt="zhh" class="avatar" src="//images/avatar.gif" title="zhh"></a>
+            <div class="ubody">
+              <div id="ublinks"> <a href="">退出</a> | <a id="help" href="" title="Help">帮助</a> </div>
+              <strong><a href="">zhh</a></strong>
+              <input class="lq-placeholder" name="membership-q" id="membership-q" type="text">
+                <ul id="memberships" style="display: none;">
+                </ul>
+            </div>
+          </div>
+        </div>
+        <!-- /userbadge -->
+      </div>
+      <!-- /header -->
+      <!-- content -->
+      <div id="content">
+        <!-- main -->
+        <div id="main">
+          <div id="project-nav">
+            <ul>
+              <li class="submenu-tab selected" id="t-proj"><a href="" title="Overview">Overview</a></li>
+              <li class="submenu-tab" id="t-menu"><a href="">Tickets <em>more</em></a>
+                <ul class="submenu wbadges" style="display: none;">
+                  <li class="bin shared" id="menu_ticket_bin_9863"> <a href="" title="Query: tagged:must-have"><span class="badge">8</span>Must Haves</a> </li>
+                  <li><a href="">All tickets</a></li>
+                  <li><a href="">Todays tickets</a></li>
+                  <li><a href="">Tickets I'm watching</a></li>
+                  <li><a href="">Assigned to me</a></li>
+                  <li><a href="">Reported by me</a></li>
+                  <li><a href="">Open tickets</a></li>
+                </ul>
+              </li>
+              <li><a href="">Messages</a></li>
+              <li class="submenu-tab" id="t-milestone"><a href="">Milestones <em>more</em></a>
+                <ul class="submenu wbadges" style="display: none;">
+                  <li><a href=""><span class="badge">4</span>BaseApp 1.0</a></li>
+                </ul>
+              </li>
+              <li> <a href="">BaseApp 1.0</a> </li>
+              <li id="quick-search"><a href="#" onclick="$('quick-search-bar').toggle(); $('q').focus(); return false">Search</a></li>
+            </ul>
+          </div>
+          <div id="quick-search-bar" style="display: none;">
+            <form action="/projects/17607-baseapp/tickets" id="search-form" method="get">
+              <label for="q">Find tickets:</label>
+              <input id="q" name="q" value="" type="search">
+                <a href="#search-help" id="search-help-trigger">[help]</a>
+            </form>
+          </div>
+          <div id="action-nav">
+            <ul class="clear">
+            </ul>
+          </div>
+          <div id="flashes">
+            <div id="flash-errors" style="display: none;"></div>
+            <% if flash[:notice] -%>
+              <div id="flash-notice"><%= flash[:notice] %></div>
+            <% end -%>
+          </div>
+          <div id="page-top"> </div>
+          <div id="main-content" class="clear">
+            <%= yield :layout %>
+          </div>
+        </div>
+        <!-- /main -->
+        <!-- sidebar -->
+        <div id="sbar"> <span class="sbar-btn"><a href=""><img alt="New-ticket" src="images/new-ticket.png"> Create new ticket</a></span>
+          <div class="attention">
+            <h3>Create your profile</h3>
+            <p>Help contribute to this project by taking a few moments to create your personal profile. <a href="" class="abutton">Create your profile &raquo;</a> </p>
+          </div>
+          <div class="proj-desc">
+            <p>BaseApp is the quick-start for your Rails App</p>
+          </div>
+          <div class="sblock bin-block" id="shared-bin-block">
+            <h3>Shared Ticket Bins <a href="#sortbin" id="shared-bin-sorter" style="display: none;">(Sort)</a></h3>
+            <ul class="stacked wbadges sortable" id="shared-ticket-bins">
+              <li class="bin shared" id="list_ticket_bin_9863"> <a href="" title="Query: tagged:must-have"><span class="badge">8</span>Must Haves</a> <span class="handle" style="display: none;">↓↑ drag</span> </li>
+            </ul>
+          </div>
+          <div class="sblock">
+            <h3><a href="">BaseApp 1.0</a>—<strong>75%</strong> complete</h3>
+            <div class="pbar-container">
+              <div id="pbar" style="width: 75%;">&nbsp;</div>
+            </div>
+            <p>Completed 12 of 16 tickets</p>
+          </div>
+          <div class="sblock clear">
+            <h3>Pages </h3>
+            <ul class="link-list sortable" id="pagelist">
+              <li id="page_36502"><span class="handle" style="display: none;">↓↑ drag</span><a href="">Home</a></li>
+            </ul>
+          </div>
+          <div class="sblock">
+            <h3>Tags</h3>
+            <div class="taglist"> <a href="" class="size0" rel="tag" title=""></a> <a href="" class="size0" rel="tag" title=":site_name">:site_name</a> <a href="" class="size0" rel="tag" title="admin">admin</a> </div>
+          </div>
+        </div>
+        <!-- /sidebar -->
+      </div>
+      <!-- /content -->
+      <!-- footer -->
+      <div id="footer">
+        <div id="footer-cnt"> <a href="" id="eylogo"><img src="//images/eylogo.png" alt="Engine Yard" title="Our excellent Ruby on Rails host"></a>
+          <ul id="ftr-links">
+            <li id="entp"><a href="" title="The folks who built this">activereload/entp</a></li>
+            <li><a href="" title="File a support request"><strong>Lighthouse Support</strong></a></li>
+            <li><a href="" title="Keep tabs on the status of Lighthouse"><strong>Status</strong></a></li>
+            <li><a href="" title="Read our stuff">Our blog</a></li>
+            <li><a href="">FAQ</a></li>
+            <li><a href="" title="Developer API documentation and examples">API</a></li>
+            <li><a href="" title="Privacy">Privacy</a></li>
+            <li><a href="" title="Terms of service">Terms of service</a></li>
+          </ul>
+          <p>Copyright © 2007-2009 <a href="">activereload/entp</a> with hosting and servers sponsored by our friends at <a href="">Engine Yard</a>.</p>
+        </div>
+      </div>
+      <!-- /footer -->
+    </div>
+    <!-- /container -->
+
+    <div></div>
+    <div style="position: fixed; top: 0pt; left: 0pt; width: 100%; height: 100%; z-index: 9998; display: none;" id="modal_overlay"></div>
+    <div style="display: none;" id="modal_container"></div>
+    <div style="display: none;" id="modal_loading"></div>
+  </body>
+</html>
