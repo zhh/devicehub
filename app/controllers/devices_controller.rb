@@ -1,5 +1,10 @@
 class DevicesController < ApplicationController
   layout 'base'
+
+  def index
+    render :action => 'new_devicetype'
+  end
+
   def new_devicetype
     @devicetype = Devicetype.new(params[:devicetype])
     if request.post? and @devicetype.save

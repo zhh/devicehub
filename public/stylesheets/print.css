@@ -203,8 +203,21 @@ h3.uname {
 }
 
 ul.ticket-list {
-  margin-left: 10px;
-  font-size: 90% !important;
+  clear: both;
+  margin-left: 60px;
+  margin-top: 10px;
+  font-size: 80% !important;
+  list-style: none;
+}
+
+.aticket {
+  padding: 6px 0;
+}
+
+li.aticket .mstonetstate {
+  position: static !important;
+  float: right !important;
+  font-weight: bold;
 }
 
 .tnum2 {
@@ -214,6 +227,23 @@ ul.ticket-list {
 
 .prioritize {
   display: none;
+}
+
+div h3.uname span.quiet  {
+  display: block;
+  font-size:70%;
+  font-weight: normal;
+  line-height: 100%;
+  color: #555 !important;
+}
+
+
+li.aticket span.itag:before {
+  content: "/ ";
+}
+
+li.aticket span.itag {
+  color: gray !important;
 }
 
 /* @end */
@@ -233,11 +263,11 @@ ul.ticket-list {
   border-bottom: 2px solid #ccc;
 }
 
-.issues td {
+.issues td, .aticket {
   border-bottom: 1px solid #eee;
 }
 
-.issues td.tnum {
+.issues td.tnum, .aticket .tnum2 {
   font-weight: bold;
   text-align: center;
   width: 75px;

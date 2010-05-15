@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html class="csshidden" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <script type="text/javascript" charset="utf-8">document.getElementsByTagName('html')[0].className = 'csshidden';</script>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
+    <title>Dashboard - zhh</title>
+
+    <%= stylesheet_link_tag "bundle", :media => "screen" %>
+    <%= javascript_include_tag "bundle", "code" %>
+    <%= stylesheet_link_tag "print", :media => "print" %>
+
+    <link rel="shortcut icon" href="/images/favicon.gif" type="image/gif"/>
+
+    <style type="text/css">input.styled { display: none; } select.styled { position: relative; width: 150px; opacity: 0; filter: alpha(opacity=0); z-index: 5; }</style>
+
+    <style type="text/css">
+
+    </style>
+    <!--[if lt IE 7]>
+      <link href="/stylesheets/curb-stomp.css?1273136904" media="screen" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <!--[if IE 7]>
+      <link href="/stylesheets/ie7.css?1273136904" media="screen" rel="stylesheet" type="text/css" />
+    <![endif]-->
+
+    <script type="text/javascript" charset="utf-8">
+      if(typeof Lighthouse == 'undefined')
+        var Lighthouse = {};
+
+      Lighthouse.authenticityToken = 'ba2504ffb89bfc12389b3d16f77fdd378b5fd819';
+      Lighthouse.projectMember = true;
+      Lighthouse.userId = '36671';
+    </script>
+
+    <link href="http://zhh.lighthouseapp.com/events.atom" rel="alternate" title="Events for zhh" type="application/atom+xml"/>
+
+
+    <script type="text/javascript" charset="utf-8">
+      document.observe('dom:loaded', function() {
+        Lighthouse.init();
+        var flashNotice = "";
+        var flashError  = "";
+        if(flashNotice) Flash.notice(flashNotice, true);
+        if(flashError)  Flash.errors(flashError, true);
+
+      });
+
+    </script>
+    <style charset="utf-8" type="text/css">#tender_window{ position:absolute; top:20px; left:50%; margin-left:-340px; width:680px; height:615px; padding:3px; background:url(/images/widget/overlay_back.png); z-index:9999; }#tender_window iframe{ border:none; width:100%; height:100%; } #tender_window #tender_frame{ width:100%; height:100%; background:url(/images/widget/loader.gif) 50% 50% no-repeat #fff; } #tender_closer{ position:absolute; top:18px; right:18px; color:#fff; font-family:Helvetica, Arial, sans-serif; font-size:12px; font-weight:bold; text-decoration:none; border:none; } #tender_toggler{ position:absolute; top:100px; right:0px; width:33px; height:105px; padding:3px 0 3px 3px; background:url(/images/widget/overlay_back.png); } #tender_toggler_link{ display:block; width:100%; height:100%; text-decoration:none; border:none; background:#006699; text-indent:-9999px; background:url(/images/widget/tab_text.gif); } </style>
+  </head>
+  <body class="firefox account-dashboard">
+    <!-- container -->
+    <div id="container">
+      <!-- header -->
+      <div id="header" class="clear">
+        <ul id="sec-nav">
+          <li><a href="http://zhh.lighthouseapp.com/settings">Settings &amp; Payment</a></li>
+          <li><a href="http://zhh.lighthouseapp.com/members">Access &amp; Permissions</a></li>
+        </ul>
+        <div id="titles">
+          <h1>
+            <strong id="account-name">Account</strong>
+            <a href="http://zhh.lighthouseapp.com/" class="pname">zhh</a>
+          </h1>
+        </div>
+
+        <!-- userbadge -->
+        <div id="rheader">
+          <div id="userbadge">
+            <a href="http://zhh.lighthouseapp.com/users/36671"><img alt="zhh" class="avatar" src="/images/avatar.gif" title="zhh"/></a>
+            <div class="ubody">
+              <div id="ublinks">
+                <a href="http://zhh.lighthouseapp.com/logout?to=%2Fdashboard">Sign out</a> |
+                <a id="help" href="http://help.lighthouseapp.com/?sso=ZCVHl2xArrQHuyc1W88PlRa17EajohqOSy6ZS1PXujJwd_rLQd-4Mbjoi_VGbHcuFjTC1W4ESC_mXNI4aAkCIzhuDKAdg3kP2H5pT9QKrdJzN1XRJxErW0sMIhMYUDBUgWwboWHEaDAe9_pewOMtUd5dl7NM74PrCn7JDWQN9zfN2YTVfMWhq_MCf4SmyNRo-9QiN2Yav_cAvxcLdsosYkDcnOqEKUC_HgldHoMhrKnSI7p5kUH59BiXcoz8MC1P0_SKy6Kb1C_HX0DJmv2_69mzkv6D2wZazDioc4_dIBOFDVOmd-1EG76ukEaaib9I7gTXQ6wSDv1D74OQ5ZsM7A%3D" title="Help">Help</a>
+              </div>
+              <strong><a href="http://zhh.lighthouseapp.com/users/36671">zhh</a></strong>
+              <input value="Go to a project..." class="lq-placeholder" name="membership-q" id="membership-q" type="text"/>
+              <ul id="memberships" style="display: none;">
+
+                <li class="" id="" title="http://devicehub.lighthouseapp.com"><span class="acct">devicehub</span></li>
+
+                <li class="" id="" title="http://devicehub.lighthouseapp.com/projects/36755-devicehub">&nbsp;&nbsp;devicehub</li>
+
+                <li class="" id="" title="http://zhh.lighthouseapp.com"><span class="acct">zhh</span></li>
+
+              </ul>
+            </div>
+          </div>
+          <!-- /userbadge -->
+        </div>
+
+
+      </div>
+      <!-- /header -->
+
+      <!-- content -->
+      <div id="content">
+
+        <!-- main -->
+        <%= yield%>
+        <!-- /main -->
+
+        <!-- sidebar -->
+        <div id="sbar">
+
+          <span class="sbar-btn">
+            <a href="http://zhh.lighthouseapp.com/projects/new" style="margin-top: 3px; margin-bottom: 9px;">
+              <img alt="New-project" class="plus-sign" src="/images/new-project.png"/>创建一个新项目</a>
+          </span>
+
+          <div class="sblock">
+            <h3>Projects</h3>
+            <ul class="stacked wbadges" id="projects">
+              <li style="">
+                <a href="http://zhh.lighthouseapp.com/projects/new">Create your
+                  first project</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="sblock clear">
+            <h3>Pages </h3>
+            <ul class="link-list sortable" id="pagelist">
+              <li id="page_73136"><span class="handle" style="display: none;">↓↑
+                  drag</span><a href="http://zhh.lighthouseapp.com/home">Home</a></li>
+            </ul>
+
+            <a href="http://zhh.lighthouseapp.com/pages/new" class="btm-link">Add
+              account page</a>
+          </div>
+
+        </div>
+        <!-- /sidebar -->
+
+      </div>
+      <!-- /content -->
+
+      <!-- footer -->
+      <div id="footer">
+        <div id="footer-cnt">
+          <a href="http://engineyard.com/" id="eylogo"><img src="/images/eylogo.png" alt="Engine Yard" title="Our excellent Ruby on Rails host"/></a>
+            <ul id="ftr-links">
+              <li id="entp"><a href="http://entp.com/" title="The folks who
+                               built this">activereload/entp</a></li>
+              <li><a
+                  href="http://help.lighthouseapp.com/?sso=ZCVHl2xArrQHuyc1W88PlRa17EajohqOSy6ZS1PXujKX9nEl84zNIZEKeE9IMk8UqXlkylxO4iwGnBkrdMZFzCDAJp189apiRJ8e4eT1phg_ogHrq2KBjbFv_pqpfGrjsv-z3gblPKPNBOgk-JMz_QzWkRwS2eUZmn1cKkXCDVyU1U34t1yoU-i8dush-mdhNS87iiehVTLM4pFD02cAhWrbWcz56GeQwusippoTzbk16uzrx9LGRUR36ntLRB8Cf1zH2-EyuAvXO3MAbaiy5ez95k98NEB54hG01ymb7miOHVJjP-gvG31ist6ZX7XZSHsdnrcNhVfSlT9q0VNpow%3D"
+                  title="File a support request"><strong>Lighthouse Support</strong></a></li>
+              <li><a href="http://lhstatus.com/" title="Keep tabs on the
+                     status of Lighthouse"><strong>Status</strong></a></li>
+              <li><a href="http://hoth.entp.com/" title="Read our stuff">Our
+                  blog</a></li>
+              <li><a
+                  href="http://help.lighthouseapp.com/faqs?sso=ZCVHl2xArrQHuyc1W88PlRa17EajohqOSy6ZS1PXujKX9nEl84zNIZEKeE9IMk8UqXlkylxO4iwGnBkrdMZFzCDAJp189apiRJ8e4eT1phg_ogHrq2KBjbFv_pqpfGrjsv-z3gblPKPNBOgk-JMz_QzWkRwS2eUZmn1cKkXCDVyU1U34t1yoU-i8dush-mdhNS87iiehVTLM4pFD02cAhWrbWcz56GeQwusippoTzbk16uzrx9LGRUR36ntLRB8Cf1zH2-EyuAvXO3MAbaiy5ez95k98NEB54hG01ymb7miOHVJjP-gvG31ist6ZX7XZSHsdnrcNhVfSlT9q0VNpow%3D"
+                  title="Frequently Asked Questions">FAQ</a></li>
+              <li><a href="http://lighthouseapp.com/api" title="Developer
+                     API documentation and examples">API</a></li>
+              <li><a href="http://lighthouseapp.com/privacy" title="Privacy">Privacy</a></li>
+              <li><a href="http://lighthouseapp.com/terms" title="Terms of
+                     service">Terms of service</a></li>
+            </ul>
+            <p>Copyright © 2007-2010 <a href="http://entp.com/">activereload/entp</a>
+              with hosting and servers sponsored by our friends at <a
+                href="http://engineyard.com/">Engine Yard</a>.</p>
+        </div>
+      </div>
+      <!-- /footer -->
+    </div>
+    <!-- /container -->
+
+    <script type="text/javascript" charset="utf-8">
+      Tender = {
+        sso: "ZCVHl2xArrQHuyc1W88PlRa17EajohqOSy6ZS1PXujKX9nEl84zNIZEKeE9IMk8UqXlkylxO4iwGnBkrdMZFzCDAJp189apiRJ8e4eT1phg_ogHrq2KBjbFv_pqpfGrjsv-z3gblPKPNBOgk-JMz_QzWkRwS2eUZmn1cKkXCDVyU1U34t1yoU-i8dush-mdhNS87iiehVTLM4pFD02cAhWrbWcz56GeQwusippoTzbk16uzrx9LGRUR36ntLRB8Cf1zH2-EyuAvXO3MAbaiy5ez95k98NEB54hG01ymb7miOHVJjP-gvG31ist6ZX7XZSHsdnrcNhVfSlT9q0VNpow=",
+        hideToggle: true,
+        widgetToggles: [$('help')]
+      }
+    </script>
+    <script src="dashboard_files/tender_widget.js" type="text/javascript" charset="utf-8"></script><div><div
+        style="display: none;" id="tender_toggler"><a href="#"
+                                                    id="tender_toggler_link">Help &amp; Support</a></div></div>
+    <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script><script src="dashboard_files/ga.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      try {
+        var pageTracker = _gat._getTracker("UA-1408278-2");
+        pageTracker._trackPageview();
+      } catch(err) {}</script>
+
+    <div></div>
+    <div style="position: fixed; top: 0pt; left: 0pt; width: 100%; height: 100%; z-index: 9998; display: none;" id="modal_overlay"></div>
+    <div style="display: none;" id="modal_container"></div>
+    <div style="display: none;" id="modal_loading"></div>
+  </body>
+</html>
