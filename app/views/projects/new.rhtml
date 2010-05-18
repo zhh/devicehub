@@ -1,0 +1,110 @@
+<div id="main">
+  <div id="project-nav">
+    <ul>
+      <li id="quick-search"><a href="#" onclick="$('quick-search-bar').toggle(); $('q').focus(); return false">Search</a></li>
+    </ul>
+  </div>
+
+
+
+
+  <div id="action-nav">
+    <ul class="clear">
+
+    </ul>
+  </div>
+
+
+  <div id="flashes">
+    <div id="flash-errors" style="display: none;"></div>
+    <div id="flash-notice" style="display: none;"></div>
+  </div>
+
+  <div id="page-top">
+
+  </div>
+
+  <div id="main-content" class="clear">
+
+
+    <div class="group">
+      <h3><%= _("Create A New Project") %></h3>
+      <form action="/projects" class="new_project" id="new_project"
+            method="post"><div style="margin: 0pt; padding: 0pt;"><input
+            name="authenticity_token"
+            value="ba2504ffb89bfc12389b3d16f77fdd378b5fd819" type="hidden"></div>  <table
+          class="form-tbl" cellpadding="0" cellspacing="0">
+          <tbody><tr>
+              <th><label for="project_name">项目名称</label></th>
+              <td><input class="big" id="project_name" name="project[name]"
+                         size="30" type="text"></td>
+            </tr>
+            <tr>
+              <th><label for="project_description">项目描述</label></th>
+              <td><textarea cols="55" id="project_description"
+                            name="project[description]" rows="10"></textarea></td>
+            </tr>
+            <tr>
+              <th><label for="project_archived">Project Type</label></th>
+              <td>
+                <ul class="radioed">
+                  <li>
+                    <input checked="checked" id="project_access_private"
+                           name="project[access]" value="private" type="radio">
+                    <h4><label for="project_access_private">Private project</label></h4>
+                    <p class="hint">This projects is only viewable and editable
+                      by its members.</p>
+                  </li>
+                  <li>
+                    <input id="project_access_public"
+                           name="project[access]" value="public" type="radio">
+                    <h4><label for="project_access_public">Public project</label></h4>
+                    <p class="hint">This project's tickets and milestones can be
+                      viewed by anyone.  Additionally, people can register and add new
+                      tickets.</p>
+                  </li>
+                  <li>
+                    <input id="project_access_oss" name="project[access]"
+                           value="oss" type="radio">
+                    <h4><label for="project_access_oss">Open Source project</label></h4>
+                    <p class="hint">
+                      This project's code, resources, or material are freely
+                      available to the public.  This project
+                      is searchable and viewable by the public.
+                    </p>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+
+            <tr id="license">
+              <th><label for="project_license">Select a license:</label></th>
+              <td>
+                <select id="project_license" name="project[license]"><option
+                    selected="selected" value="afl">Academic Free License</option>
+                  <option value="agpl">GNU Affero General Public License</option>
+                  <option value="apache-2-0">Apache License 2.0</option>
+                  <option value="artistic-gpl-2">Artistic License/GPLv2</option>
+                  <option value="bsd">BSD License</option>
+                  <option value="cc">Creative Commons</option>
+                  <option value="cpal">Common Public Attribution License</option>
+                  <option value="gpl-2">GNU General Public License v2</option>
+                  <option value="gpl-3">GNU General Public License v3</option>
+                  <option value="lgpl">GNU Lesser General Public License</option>
+                  <option value="mit">MIT License</option>
+                  <option value="mozilla-1-1">Mozilla Public License 1.1</option>
+                  <option value="other">Other</option></select>
+                <p class="hint">Select a license for this Open Source project</p>
+              </td>
+            </tr>
+          </tbody></table>
+
+
+
+        <p class="btns right">
+          <input class="button" name="commit" value="Add project"
+                 type="submit">
+        </p>
+      </form></div>
+  </div>
+</div>

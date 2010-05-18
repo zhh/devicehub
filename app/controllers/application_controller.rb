@@ -7,4 +7,8 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+
+  # GetText
+  GetText.locale = "zh_CN"
+  init_gettext "devicehub"
 end
