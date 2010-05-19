@@ -39,9 +39,13 @@
       <ul class="data events"></ul>
     </div>
 
+    <% if @projects.empty? %>
     <div id="noproject" class="blankslate">
-      从这里开始 <%= link_to "创建你的第一个项目", :controller => 'projects' , :action => 'new'  %> »
+      从这里开始 <%= link_to _("Create A New Project"), :controller => 'projects' , :action => 'new'  %> »
     </div>
+    <% else %>
+      有货！
+    <% end %>
 
   </div>
 </div>
