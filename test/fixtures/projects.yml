@@ -1,7 +1,10 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+project_001:
+  id: 1
+  name: 长枢一楼IDC项目
+  description: 电信核心IDC机房
 
-# one:
-#   column: value
-#
-# two:
-#   column: value
+project_002:
+  id: 2
+  name: 长枢二楼IDC项目
+  description: 电信核心IDC机房
+
