@@ -16,6 +16,6 @@ class ProjectTest < ActiveSupport::TestCase
   
   def test_unique_name
     project = Project.new(:name => projects(:project_001).name, :description => "测试项目名称不重复" )
-    assert project.save
+    assert !project.save
   end
 end
