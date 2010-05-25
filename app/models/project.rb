@@ -5,7 +5,7 @@ class Project < ActiveRecord::Base
   validates_length_of :description, :maximum => 255
 
   # 查询所有项目
-  def self.find_projects
+  def self.find_all_projects
     find(:all)
   end
 end

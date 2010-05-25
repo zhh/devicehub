@@ -97,15 +97,40 @@
       <div id="content">
 
         <!-- main -->
-        
-            <%= yield :layout%>
+        <div id="main">
+          <div id="project-nav">
+            <ul>
+              <li id="quick-search"><a href="#" onclick="$('quick-search-bar').toggle(); $('q').focus(); return false">Search</a></li>
+            </ul>
+          </div>
+
+          <div id="action-nav">
+            <ul class="clear"></ul>
+          </div>
+
+          <div id="flashes">
+            <div id="flash-errors" style="display: none;"></div>
+            <% if flash[:notice] -%>
+              <div id="flash-notice"><%= flash[:notice] %></div>
+            <% end -%>
+          </div>
+
+          <div id="page-top"></div>
+
+          <div id="main-content" class="clear">
+            <div class="group">
+              <%= yield :layout%>
+            </div>
+          </div>
           
+        </div>
+
         <!-- /main -->
 
         <!-- sidebar -->
         <div id="sbar">
 
-          <span class="sbar-btn">            
+          <span class="sbar-btn">
             <a href="/projects/new" style="margin-top: 3px; margin-bottom: 9px;">
               <img alt="New-project" class="plus-sign" src="/images/new-project.png"/>创建一个新项目</a>
           </span>
@@ -177,7 +202,7 @@
       }
     </script>
 
-    <%#= javascript_include_tag "tender_widget" %><div><div
+<%#= javascript_include_tag "tender_widget" %><div><div
         style="display: none;" id="tender_toggler"><a href="#"
                                                     id="tender_toggler_link">Help &amp; Support</a></div></div>
     <script type="text/javascript">

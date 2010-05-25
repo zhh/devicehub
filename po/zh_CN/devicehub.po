@@ -17,8 +17,8 @@ msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
 #: app/models/project.rb:-
-msgid "project"
-msgstr "项目"
+msgid "Project|List"
+msgstr "项目列表"
 
 #: app/models/project.rb:-
 msgid "Project|Name"
@@ -33,5 +33,5 @@ msgid "Create A New Project"
 msgstr "新建项目"
 
 #: app/views/project/new.rhtml:5
-msgid "Add Project"
-msgstr "新建项目"
+msgid "Save Project"
+msgstr "保存项目"

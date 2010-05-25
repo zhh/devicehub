@@ -1,51 +1,8 @@
-<div id="main">
-  <div id="project-nav">
-    <ul>
-      <li id="t-proj" class="submenu-tab selected">
-        <a href="http://zhh.lighthouseapp.com/dashboard">Dashboard</a>
-      </li>
-      <li>
-        <a href="http://zhh.lighthouseapp.com/tickets">Tickets</a>
-      </li>
-      <li>
-        <a href="http://zhh.lighthouseapp.com/messages">Messages</a>
-      </li>
-      <li>
-        <a href="http://zhh.lighthouseapp.com/attachments">Attachments</a>
-      </li>
-      <li id="quick-search">
-        <a href="#" onclick="$('quick-search-bar').toggle(); $('q').focus(); return false">Search</a>
-      </li>
-    </ul>
-  </div>
-
-  <div id="quick-search-bar" style="display: none;">
-    <form action="/tickets" id="search-form" method="get">
-      <label for="q">Find tickets:</label> <input id="q" name="q" type="search"/>
-      <a href="#search-help" id="search-help-trigger">[help]</a>
-    </form>
-  </div>
-
-  <div id="flashes">
-    <div id="flash-errors" style="display: none;"></div>
-    <div id="flash-notice" style="display: none;"></div>
-  </div>
-
-  <div id="main-content" class="clear">
-    <div class="link-bar">
-      <a class="atom" href="http://zhh.lighthouseapp.com/events.atom">Subscribe</a>
-    </div>
-    <div id="events">
-      <ul class="data events"></ul>
-    </div>
-
-    <% if @projects.empty? %>
-    <div id="noproject" class="blankslate">
-      从这里开始 <%= link_to _("Create A New Project"), :controller => 'projects' , :action => 'new'  %> »
-    </div>
-    <% else %>
-      有货！
-    <% end %>
-
-  </div>
+<% if @projects.empty? %>
+<div id="noproject" class="blankslate">
+  从这里开始 <%= link_to _("Create A New Project"), :controller => 'projects' , :action => 'new'  %> »
 </div>
+<% else %>
+  有货！
+<% end %>
+

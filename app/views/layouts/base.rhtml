@@ -1,146 +1,232 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html class="csshidden" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-      <title>设备中心</title>
-      <%= stylesheet_link_tag "core", :media => "all" %>
+    <script type="text/javascript" charset="utf-8">document.getElementsByTagName('html')[0].className = 'csshidden';</script>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
+    <title>Dashboard - zhh</title>
 
-      <%= javascript_include_tag "core" %>
-      <%= javascript_include_tag "application" %>
-      <%= javascript_include_tag "code" %>
-      <%= javascript_include_tag "/ckeditor/ckeditor.js" %>
+    <%= stylesheet_link_tag "bundle", :media => "screen" %>
+    <%= javascript_include_tag "bundle", "code" %>
+    <%= stylesheet_link_tag "print", :media => "print" %>
+
+    <link rel="shortcut icon" href="/images/favicon.gif" type="image/gif"/>
+
+    <style type="text/css">input.styled { display: none; } select.styled { position: relative; width: 150px; opacity: 0; filter: alpha(opacity=0); z-index: 5; }</style>
+
+    <style type="text/css">
+
+    </style>
+    <!--[if lt IE 7]>
+      <link href="/stylesheets/curb-stomp.css?1273136904" media="screen" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <!--[if IE 7]>
+      <link href="/stylesheets/ie7.css?1273136904" media="screen" rel="stylesheet" type="text/css" />
+    <![endif]-->
+
+    <script type="text/javascript" charset="utf-8">
+      if(typeof Lighthouse == 'undefined')
+        var Lighthouse = {};
+
+      Lighthouse.authenticityToken = 'ba2504ffb89bfc12389b3d16f77fdd378b5fd819';
+      Lighthouse.projectMember = true;
+      Lighthouse.userId = '36671';
+    </script>
+
+    <link href="http://zhh.lighthouseapp.com/events.atom" rel="alternate" title="Events for zhh" type="application/atom+xml"/>
+
+
+    <script type="text/javascript" charset="utf-8">
+      document.observe('dom:loaded', function() {
+        Lighthouse.init();
+        var flashNotice = "";
+        var flashError  = "";
+        if(flashNotice) Flash.notice(flashNotice, true);
+        if(flashError)  Flash.errors(flashError, true);
+
+      });
+
+    </script>
+    <style charset="utf-8" type="text/css">#tender_window{ position:absolute; top:20px; left:50%; margin-left:-340px; width:680px; height:615px; padding:3px; background:url(/images/widget/overlay_back.png); z-index:9999; }#tender_window iframe{ border:none; width:100%; height:100%; } #tender_window #tender_frame{ width:100%; height:100%; background:url(/images/widget/loader.gif) 50% 50% no-repeat #fff; } #tender_closer{ position:absolute; top:18px; right:18px; color:#fff; font-family:Helvetica, Arial, sans-serif; font-size:12px; font-weight:bold; text-decoration:none; border:none; } #tender_toggler{ position:absolute; top:100px; right:0px; width:33px; height:105px; padding:3px 0 3px 3px; background:url(/images/widget/overlay_back.png); } #tender_toggler_link{ display:block; width:100%; height:100%; text-decoration:none; border:none; background:#006699; text-indent:-9999px; background:url(/images/widget/tab_text.gif); } </style>
   </head>
-  <body class="msie projects-overview">
+  <body class="firefox account-dashboard">
     <!-- container -->
     <div id="container">
       <!-- header -->
       <div id="header" class="clear">
         <ul id="sec-nav">
+          <li><a href="http://zhh.lighthouseapp.com/settings">Settings &amp; Payment</a></li>
+          <li><a href="http://zhh.lighthouseapp.com/members">Access &amp; Permissions</a></li>
         </ul>
         <div id="titles">
-          <h1> <strong id="account-name"><a href="">DeviceHub</a></strong> <a href="" class="pname">DeviceHub</a> </h1>
+          <h1>
+            <strong id="account-name">Account</strong>
+            <%= link_to "白糕", {:controller => 'dashboard'}, :class => 'pname' %>
+          </h1>
         </div>
+
         <!-- userbadge -->
         <div id="rheader">
-          <div id="userbadge"> <a href=""><img alt="zhh" class="avatar" src="//images/avatar.gif" title="zhh"></a>
+          <div id="userbadge">
+            <a href="http://zhh.lighthouseapp.com/users/36671"><img alt="zhh" class="avatar" src="/images/avatar.gif" title="zhh"/></a>
             <div class="ubody">
-              <div id="ublinks"> <a href="">退出</a> | <a id="help" href="" title="Help">帮助</a> </div>
-              <strong><a href="">zhh</a></strong>
-              <input class="lq-placeholder" name="membership-q" id="membership-q" type="text">
-                <ul id="memberships" style="display: none;">
-                </ul>
+              <div id="ublinks">
+                <a href="http://zhh.lighthouseapp.com/logout?to=%2Fdashboard">Sign out</a> |
+                <a id="help" href="http://help.lighthouseapp.com/?sso=ZCVHl2xArrQHuyc1W88PlRa17EajohqOSy6ZS1PXujJwd_rLQd-4Mbjoi_VGbHcuFjTC1W4ESC_mXNI4aAkCIzhuDKAdg3kP2H5pT9QKrdJzN1XRJxErW0sMIhMYUDBUgWwboWHEaDAe9_pewOMtUd5dl7NM74PrCn7JDWQN9zfN2YTVfMWhq_MCf4SmyNRo-9QiN2Yav_cAvxcLdsosYkDcnOqEKUC_HgldHoMhrKnSI7p5kUH59BiXcoz8MC1P0_SKy6Kb1C_HX0DJmv2_69mzkv6D2wZazDioc4_dIBOFDVOmd-1EG76ukEaaib9I7gTXQ6wSDv1D74OQ5ZsM7A%3D" title="Help">Help</a>
+              </div>
+              <strong><a href="http://zhh.lighthouseapp.com/users/36671">zhh</a></strong>
+              <input value="Go to a project..." class="lq-placeholder" name="membership-q" id="membership-q" type="text"/>
+              <ul id="memberships" style="display: none;">
+
+                <li class="" id="" title="http://devicehub.lighthouseapp.com"><span class="acct">devicehub</span></li>
+
+                <li class="" id="" title="http://devicehub.lighthouseapp.com/projects/36755-devicehub">&nbsp;&nbsp;devicehub</li>
+
+                <li class="" id="" title="http://zhh.lighthouseapp.com"><span class="acct">zhh</span></li>
+
+              </ul>
             </div>
           </div>
+          <!-- /userbadge -->
         </div>
-        <!-- /userbadge -->
+
+
       </div>
       <!-- /header -->
+
       <!-- content -->
       <div id="content">
+
         <!-- main -->
         <div id="main">
           <div id="project-nav">
             <ul>
-              <li class="submenu-tab selected" id="t-proj"><a href="" title="Overview">Overview</a></li>
-              <li class="submenu-tab" id="t-menu"><a href="">Tickets <em>more</em></a>
-                <ul class="submenu wbadges" style="display: none;">
-                  <li class="bin shared" id="menu_ticket_bin_9863"> <a href="" title="Query: tagged:must-have"><span class="badge">8</span>Must Haves</a> </li>
-                  <li><a href="">All tickets</a></li>
-                  <li><a href="">Todays tickets</a></li>
-                  <li><a href="">Tickets I'm watching</a></li>
-                  <li><a href="">Assigned to me</a></li>
-                  <li><a href="">Reported by me</a></li>
-                  <li><a href="">Open tickets</a></li>
-                </ul>
+              <li id="t-proj" class="submenu-tab selected">
+                <a href="http://zhh.lighthouseapp.com/dashboard">Dashboard</a>
               </li>
-              <li><a href="">Messages</a></li>
-              <li class="submenu-tab" id="t-milestone"><a href="">Milestones <em>more</em></a>
-                <ul class="submenu wbadges" style="display: none;">
-                  <li><a href=""><span class="badge">4</span>BaseApp 1.0</a></li>
-                </ul>
+              <li>
+                <a href="http://zhh.lighthouseapp.com/tickets">Tickets</a>
               </li>
-              <li> <a href="">BaseApp 1.0</a> </li>
-              <li id="quick-search"><a href="#" onclick="$('quick-search-bar').toggle(); $('q').focus(); return false">Search</a></li>
+              <li>
+                <a href="http://zhh.lighthouseapp.com/messages">Messages</a>
+              </li>
+              <li>
+                <a href="http://zhh.lighthouseapp.com/attachments">Attachments</a>
+              </li>
+              <li id="quick-search">
+                <a href="#" onclick="$('quick-search-bar').toggle(); $('q').focus(); return false">Search</a>
+              </li>
             </ul>
           </div>
+
           <div id="quick-search-bar" style="display: none;">
-            <form action="/projects/17607-baseapp/tickets" id="search-form" method="get">
-              <label for="q">Find tickets:</label>
-              <input id="q" name="q" value="" type="search">
-                <a href="#search-help" id="search-help-trigger">[help]</a>
+            <form action="/tickets" id="search-form" method="get">
+              <label for="q">Find tickets:</label> <input id="q" name="q" type="search"/>
+              <a href="#search-help" id="search-help-trigger">[help]</a>
             </form>
           </div>
-          <div id="action-nav">
-            <ul class="clear">
-            </ul>
-          </div>
+
+
           <div id="flashes">
             <div id="flash-errors" style="display: none;"></div>
             <% if flash[:notice] -%>
               <div id="flash-notice"><%= flash[:notice] %></div>
             <% end -%>
           </div>
-          <div id="page-top"> </div>
+
           <div id="main-content" class="clear">
-            <%= yield :layout %>
+            <div class="link-bar">
+              <a class="atom" href="http://zhh.lighthouseapp.com/events.atom">Subscribe</a>
+            </div>
+            <div id="events">
+              <ul class="data events"></ul>
+            </div>
+            <%= yield :layout%>
           </div>
         </div>
+
         <!-- /main -->
+
         <!-- sidebar -->
-        <div id="sbar"> <span class="sbar-btn"><a href=""><img alt="New-ticket" src="images/new-ticket.png"> Create new ticket</a></span>
-          <div class="attention">
-            <h3>Create your profile</h3>
-            <p>Help contribute to this project by taking a few moments to create your personal profile. <a href="" class="abutton">Create your profile &raquo;</a> </p>
-          </div>
-          <div class="proj-desc">
-            <p>BaseApp is the quick-start for your Rails App</p>
-          </div>
-          <div class="sblock bin-block" id="shared-bin-block">
-            <h3>Shared Ticket Bins <a href="#sortbin" id="shared-bin-sorter" style="display: none;">(Sort)</a></h3>
-            <ul class="stacked wbadges sortable" id="shared-ticket-bins">
-              <li class="bin shared" id="list_ticket_bin_9863"> <a href="" title="Query: tagged:must-have"><span class="badge">8</span>Must Haves</a> <span class="handle" style="display: none;">↓↑ drag</span> </li>
-            </ul>
-          </div>
+        <div id="sbar">
+
+          <span class="sbar-btn">
+            <a href="/projects/new" style="margin-top: 3px; margin-bottom: 9px;">
+              <img alt="New-project" class="plus-sign" src="/images/new-project.png"/><%= _("Create A New Project") %></a>
+          </span>
+
           <div class="sblock">
-            <h3><a href="">BaseApp 1.0</a>—<strong>75%</strong> complete</h3>
-            <div class="pbar-container">
-              <div id="pbar" style="width: 75%;">&nbsp;</div>
-            </div>
-            <p>Completed 12 of 16 tickets</p>
+            <%= render :partial => 'rightmenu' %>            
           </div>
+
           <div class="sblock clear">
             <h3>Pages </h3>
             <ul class="link-list sortable" id="pagelist">
-              <li id="page_36502"><span class="handle" style="display: none;">↓↑ drag</span><a href="">Home</a></li>
+              <li id="page_73136"><span class="handle" style="display: none;">↓↑
+                  drag</span><a href="http://zhh.lighthouseapp.com/home">Home</a></li>
             </ul>
+
+            <a href="http://zhh.lighthouseapp.com/pages/new" class="btm-link">Add
+              account page</a>
           </div>
-          <div class="sblock">
-            <h3>Tags</h3>
-            <div class="taglist"> <a href="" class="size0" rel="tag" title=""></a> <a href="" class="size0" rel="tag" title=":site_name">:site_name</a> <a href="" class="size0" rel="tag" title="admin">admin</a> </div>
-          </div>
+
         </div>
         <!-- /sidebar -->
+
       </div>
       <!-- /content -->
+
       <!-- footer -->
       <div id="footer">
-        <div id="footer-cnt"> <a href="" id="eylogo"><img src="//images/eylogo.png" alt="Engine Yard" title="Our excellent Ruby on Rails host"></a>
+        <div id="footer-cnt">
+          <a href="http://engineyard.com/" id="eylogo"><img src="/images/eylogo.png" alt="Engine Yard" title="Our excellent Ruby on Rails host"/></a>
           <ul id="ftr-links">
-            <li id="entp"><a href="" title="The folks who built this">activereload/entp</a></li>
-            <li><a href="" title="File a support request"><strong>Lighthouse Support</strong></a></li>
-            <li><a href="" title="Keep tabs on the status of Lighthouse"><strong>Status</strong></a></li>
-            <li><a href="" title="Read our stuff">Our blog</a></li>
-            <li><a href="">FAQ</a></li>
-            <li><a href="" title="Developer API documentation and examples">API</a></li>
-            <li><a href="" title="Privacy">Privacy</a></li>
-            <li><a href="" title="Terms of service">Terms of service</a></li>
+            <li id="entp"><a href="http://entp.com/" title="The folks who
+                             built this">activereload/entp</a></li>
+            <li><a
+                href="http://help.lighthouseapp.com/?sso=ZCVHl2xArrQHuyc1W88PlRa17EajohqOSy6ZS1PXujKX9nEl84zNIZEKeE9IMk8UqXlkylxO4iwGnBkrdMZFzCDAJp189apiRJ8e4eT1phg_ogHrq2KBjbFv_pqpfGrjsv-z3gblPKPNBOgk-JMz_QzWkRwS2eUZmn1cKkXCDVyU1U34t1yoU-i8dush-mdhNS87iiehVTLM4pFD02cAhWrbWcz56GeQwusippoTzbk16uzrx9LGRUR36ntLRB8Cf1zH2-EyuAvXO3MAbaiy5ez95k98NEB54hG01ymb7miOHVJjP-gvG31ist6ZX7XZSHsdnrcNhVfSlT9q0VNpow%3D"
+                title="File a support request"><strong>Lighthouse Support</strong></a></li>
+            <li><a href="http://lhstatus.com/" title="Keep tabs on the
+                   status of Lighthouse"><strong>Status</strong></a></li>
+            <li><a href="http://hoth.entp.com/" title="Read our stuff">Our
+                blog</a></li>
+            <li><a
+                href="http://help.lighthouseapp.com/faqs?sso=ZCVHl2xArrQHuyc1W88PlRa17EajohqOSy6ZS1PXujKX9nEl84zNIZEKeE9IMk8UqXlkylxO4iwGnBkrdMZFzCDAJp189apiRJ8e4eT1phg_ogHrq2KBjbFv_pqpfGrjsv-z3gblPKPNBOgk-JMz_QzWkRwS2eUZmn1cKkXCDVyU1U34t1yoU-i8dush-mdhNS87iiehVTLM4pFD02cAhWrbWcz56GeQwusippoTzbk16uzrx9LGRUR36ntLRB8Cf1zH2-EyuAvXO3MAbaiy5ez95k98NEB54hG01ymb7miOHVJjP-gvG31ist6ZX7XZSHsdnrcNhVfSlT9q0VNpow%3D"
+                title="Frequently Asked Questions">FAQ</a></li>
+            <li><a href="http://lighthouseapp.com/api" title="Developer
+                   API documentation and examples">API</a></li>
+            <li><a href="http://lighthouseapp.com/privacy" title="Privacy">Privacy</a></li>
+            <li><a href="http://lighthouseapp.com/terms" title="Terms of
+                   service">Terms of service</a></li>
           </ul>
-          <p>Copyright © 2007-2009 <a href="">activereload/entp</a> with hosting and servers sponsored by our friends at <a href="">Engine Yard</a>.</p>
+          <p>Copyright © 2007-2010 <a href="http://entp.com/">activereload/entp</a>
+            with hosting and servers sponsored by our friends at <a
+              href="http://engineyard.com/">Engine Yard</a>.</p>
         </div>
       </div>
       <!-- /footer -->
     </div>
     <!-- /container -->
+
+    <script type="text/javascript" charset="utf-8">
+      Tender = {
+        sso: "ZCVHl2xArrQHuyc1W88PlRa17EajohqOSy6ZS1PXujKX9nEl84zNIZEKeE9IMk8UqXlkylxO4iwGnBkrdMZFzCDAJp189apiRJ8e4eT1phg_ogHrq2KBjbFv_pqpfGrjsv-z3gblPKPNBOgk-JMz_QzWkRwS2eUZmn1cKkXCDVyU1U34t1yoU-i8dush-mdhNS87iiehVTLM4pFD02cAhWrbWcz56GeQwusippoTzbk16uzrx9LGRUR36ntLRB8Cf1zH2-EyuAvXO3MAbaiy5ez95k98NEB54hG01ymb7miOHVJjP-gvG31ist6ZX7XZSHsdnrcNhVfSlT9q0VNpow=",
+        hideToggle: true,
+        widgetToggles: [$('help')]
+      }
+    </script>
+
+<%#= javascript_include_tag "tender_widget" %><div><div
+        style="display: none;" id="tender_toggler"><a href="#"
+                                                    id="tender_toggler_link">Help &amp; Support</a></div></div>
+    <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script><%#= javascript_include_tag "ga" %>
+    <script type="text/javascript">
+      try {
+        var pageTracker = _gat._getTracker("UA-1408278-2");
+        pageTracker._trackPageview();
+      } catch(err) {}</script>
 
     <div></div>
     <div style="position: fixed; top: 0pt; left: 0pt; width: 100%; height: 100%; z-index: 9998; display: none;" id="modal_overlay"></div>

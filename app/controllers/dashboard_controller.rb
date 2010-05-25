@@ -1,7 +1,7 @@
 class DashboardController < ApplicationController
-  layout 'app'
+  layout 'base'
   def index
-    @projects = Project.find_projects
+    @projects = Project.find_all_projects
   end
 
 end
