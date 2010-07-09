@@ -17,6 +17,10 @@ msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
 #: app/models/project.rb:-
+msgid "project"
+msgstr "项目"
+
+#: app/models/project.rb:-
 msgid "Project|List"
 msgstr "项目列表"
 

@@ -1,6 +1,6 @@
 <% if @projects.empty? %>
 <div id="noproject" class="blankslate">
-  从这里开始 <%= link_to _("Create A New Project"), :controller => 'projects' , :action => 'new'  %> »
+  从这里开始 <%= link_to _("Create A New Project"), :controller => 'projects' , :action => 'add_project'  %> »
 </div>
 <% else %>
   有货！
