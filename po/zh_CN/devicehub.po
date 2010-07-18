@@ -16,13 +16,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
+#Public-----------------------------------------------
+msgid "Dashboard"
+msgstr "面板"
+
+msgid "User Management"
+msgstr "用户管理"
+
 msgid "Save"
 msgstr "保存"
 
 msgid "Created Success"
 msgstr "新建成功"
 
-#Project
+#Project----------------------------------------------
 msgid "project"
 msgstr "项目"
 
@@ -38,7 +45,7 @@ msgstr "项目描述"
 msgid "Create A New Project"
 msgstr "新建项目"
 
-#User
+#User-------------------------------------------------
 msgid "user"
 msgstr "用户"
 

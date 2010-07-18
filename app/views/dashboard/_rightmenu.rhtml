@@ -7,7 +7,7 @@
     <% else %>
       <% @projects.each do |project| %>
         <ul id="projects" class="stacked wbadges">          
-          <li class="proj"><%= link_to "<span class='badge'>0</span>" + project.name, :action => '' %></li>
+          <li class="proj"><%= link_to "<span class='badge'>??</span>" + project.name, :controller => 'projects' , :action => 'list' %></li>
         </ul>
       <% end %>
     <% end %>

@@ -56,6 +56,7 @@
         <ul id="sec-nav">
           <li><a href="http://zhh.lighthouseapp.com/settings">Settings &amp; Payment</a></li>
           <li><a href="http://zhh.lighthouseapp.com/members">Access &amp; Permissions</a></li>
+          <li><%= link_to _("User Management"), :controller => 'users', :action => 'add_user' %></li>
         </ul>
         <div id="titles">
           <h1>
@@ -101,7 +102,7 @@
           <div id="project-nav">
             <ul>
               <li id="t-proj" class="submenu-tab selected">
-                <a href="http://zhh.lighthouseapp.com/dashboard">面板</a>
+                <a href="http://zhh.lighthouseapp.com/dashboard">Dashboard</a>
               </li>
               <li>
                 <a href="http://zhh.lighthouseapp.com/tickets">Tickets</a>
