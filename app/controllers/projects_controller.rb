@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
   def add_project
     @project = Project.new(params[:project])
     if request.post? and @project.save
-      flash.now[:notice] = _(Project|Project) + "：#{@project.name} 已经创建！"
+      flash.now[:notice] = _("project") + " #{@project.name} " + _("Created Success")
       @project = Project.new
 #      redirect_to :controller => 'dashboard', :action => 'index'
     end

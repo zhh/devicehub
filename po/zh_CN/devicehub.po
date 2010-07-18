@@ -16,26 +16,46 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: app/models/project.rb:-
+msgid "Save"
+msgstr "保存"
+
+msgid "Created Success"
+msgstr "新建成功"
+
+#Project
 msgid "project"
 msgstr "项目"
 
-#: app/models/project.rb:-
 msgid "Project|List"
 msgstr "项目列表"
 
-#: app/models/project.rb:-
 msgid "Project|Name"
 msgstr "项目名称"
 
-#: app/models/project.rb:-
 msgid "Project|Description"
 msgstr "项目描述"
 
-#: app/views/project/new.rhtml:1
 msgid "Create A New Project"
 msgstr "新建项目"
 
-#: app/views/project/new.rhtml:5
-msgid "Save Project"
-msgstr "保存项目"
+#User
+msgid "user"
+msgstr "用户"
+
+msgid "User|List"
+msgstr "用户列表"
+
+msgid "User|Name"
+msgstr "用户名"
+
+msgid "User|Password"
+msgstr "密码"
+
+msgid "User|Password confirmation"
+msgstr "密码确认"
+
+msgid "User|Email"
+msgstr "电子邮件"
+
+msgid "Create A New User"
+msgstr "新建用户"
