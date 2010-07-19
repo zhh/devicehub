@@ -6,6 +6,6 @@ class Project < ActiveRecord::Base
 
   # 查询所有项目
   def self.find_all_projects
-    find(:all)
+    find(:all, :order => 'created_at desc')
   end
 end

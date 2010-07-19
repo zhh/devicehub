@@ -1,0 +1,44 @@
+<div id="page-top">
+  <div id="delete-diag" class="delete-dialog" style="display:none">
+    <% form_for :project, :url => { :action => :delete_project, :id => @project.id } do |f|%>      
+      <p>确定删除此项目?删除后数据将不能恢复！</p>
+      <p class="btns">
+        <input class="button destructive" name="commit" type="submit" value="确定，删除！" />
+        <a href="#" class="button" onclick="Effect.toggle('delete-diag', 'blind'); return false;">取消</a>
+      </p>
+    <% end %>
+  </div>
+
+  <div class="greet clear">
+    <div class="ticket-meta clear">
+      <span class="ticketnum clear">
+        <a href="/projects/52334-devicehub/tickets/1">#1</a>
+      </span>
+      <span class="tstate" style="color:#ff1177">new</span>
+    </div>
+    <div class="gleft"><img alt="zhh" class="avatar" src="/images/avatar.gif" title="zhh" /></div>
+    <div class="gcnt">
+      <h2><%= @project.name %></h2>
+      <p class="date">
+        Reported by <a href="/users/36671">zhh</a> |
+        May 13th, 2010 @ 12:18 AM
+      </p>
+      <div class="greet-cnt">
+        <div>
+          <p><%= @project.description %></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="gbar clear">
+    <ul class="clear">
+      <li id="watch-ticket">
+        <form class="clear">
+          <input class="button" name="stop-watching" onclick="new Ajax.Request('/users/36671/unwatch?ticket_id=1682377', {asynchronous:true, evalScripts:true, parameters:Form.serialize(this.form) + '&amp;authenticity_token=' + encodeURIComponent('065dd98098863e46946a24fabf1cb9fe77d64365')});" title="Click to remove your email from notifications from this ticket" type="button" value="Stop watching ticket" />
+        </form>
+      </li>
+    </ul>
+  </div>
+
+</div>

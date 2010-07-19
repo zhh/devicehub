@@ -1,8 +1,6 @@
-
-
 class User < ActiveRecord::Base
-  validates_presence_of :name, :email, :password, :password_confirmation
-  validates_uniqueness_of :name
+  validates_presence_of :username, :password, :password_confirmation, :name
+  validates_uniqueness_of :username, :name
 
   attr_accessor :password_confirmation
   validates_confirmation_of :password

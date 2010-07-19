@@ -102,10 +102,10 @@
           <div id="project-nav">
             <ul>
               <li id="t-proj" class="submenu-tab selected">
-                <a href="http://zhh.lighthouseapp.com/dashboard">Dashboard</a>
+                <%= link_to _("Overview"), :controller => 'dashboard', :action => 'index' %>
               </li>
               <li>
-                <a href="http://zhh.lighthouseapp.com/tickets">Tickets</a>
+                <%= link_to _("Projects"), :controller => 'projects', :action => 'list' %>
               </li>
               <li>
                 <a href="http://zhh.lighthouseapp.com/messages">Messages</a>
@@ -116,6 +116,13 @@
               <li id="quick-search">
                 <a href="#" onclick="$('quick-search-bar').toggle(); $('q').focus(); return false">Search</a>
               </li>
+            </ul>
+          </div>
+
+          <div id="action-nav">
+            <ul class="clear">
+              <li><a href=""><%= _("Edit") %></a></li>
+              <li class="destructive"><a href="#" onclick="Effect.toggle('delete-diag', 'blind'); return false;; return false;"><%= _("Delete") %></a></li>
             </ul>
           </div>
 
@@ -135,12 +142,14 @@
           </div>
 
           <div id="main-content" class="clear">
+            <!--
             <div class="link-bar">
               <a class="atom" href="http://zhh.lighthouseapp.com/events.atom">Subscribe</a>
             </div>
             <div id="events">
               <ul class="data events"></ul>
             </div>
+            -->
             <%= yield :layout%>
           </div>
         </div>
@@ -156,7 +165,7 @@
           </span>
 
           <div class="sblock">
-            <%= render :partial => 'rightmenu' %>            
+            <%= render :partial => 'projects/projectlist' %>
           </div>
 
           <div class="sblock clear">

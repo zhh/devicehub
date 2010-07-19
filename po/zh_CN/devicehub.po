@@ -17,17 +17,35 @@ msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
 #Public-----------------------------------------------
-msgid "Dashboard"
-msgstr "面板"
+msgid "Overview"
+msgstr "概况"
+
+msgid "Projects"
+msgstr "项目"
 
 msgid "User Management"
 msgstr "用户管理"
+
+msgid "Edit"
+msgstr "修改"
+
+msgid "Delete"
+msgstr "删除"
 
 msgid "Save"
 msgstr "保存"
 
 msgid "Created Success"
 msgstr "新建成功"
+
+msgid "User ID"
+msgstr "创建人"
+
+msgid "Created At"
+msgstr "创建时间"
+
+msgid "Updated At"
+msgstr "更新时间"
 
 #Project----------------------------------------------
 msgid "project"

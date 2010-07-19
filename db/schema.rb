@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100718163508) do
+ActiveRecord::Schema.define(:version => 20100719112853) do
 
   create_table "devicetypes", :force => true do |t|
     t.string   "name"
@@ -36,10 +36,12 @@ ActiveRecord::Schema.define(:version => 20100718163508) do
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
   create_table "users", :force => true do |t|
-    t.string   "name"
+    t.string   "username"
     t.string   "hashed_password"
     t.string   "salt"
+    t.string   "name"
     t.string   "email"
+    t.string   "phone"
     t.integer  "usertype_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -47,6 +49,7 @@ ActiveRecord::Schema.define(:version => 20100718163508) do
 
   create_table "usertypes", :force => true do |t|
     t.string   "usertype"
+    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
