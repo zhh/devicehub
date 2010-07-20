@@ -1,15 +1,4 @@
-<% @projectlist = Project.find_all_projects %>
-<h3><%= _("Project|List") %></h3>
-<ul class="stacked wbadges" id="projects">
-    <% if @projectlist.empty? %>
-      <li style="">
-        <%= link_to _("Create A New Project"), :controller => 'projects', :action => 'new' %>
-      </li>
-    <% else %>
-      <% @projectlist.each do |project| %>
-        <ul id="projects" class="stacked wbadges">          
-          <li class="proj"><%= link_to "<span class='badge'>??</span>" + project.name, :controller => 'projects' , :action => 'show', :id => project %></li>
-        </ul>
-      <% end %>
-    <% end %>
+<ul id="projects" class="stacked wbadges">          
+  <li class="proj"><%= link_to "<span class='badge'>??</span>" + projectlist.name, :controller => 'projects' , :action => 'show', :id => projectlist %></li>
 </ul>
+

@@ -1,0 +1,30 @@
+<div id="project-nav">
+  <ul>
+    <% if local_assigns[:tab] == "overview" %>
+      <li id="t-proj" class="submenu-tab selected">
+      <% else %>
+      <li id="t-proj" class="submenu-tab">
+      <% end %>
+      <%= link_to _("Overview") + "<em>more</em>", :controller => 'dashboard', :action => 'index' %>
+      <ul style="display: none;" class="submenu">
+        <% if @projectlist.empty? %>
+          <li><%= link_to _("Create A New Project"), :controller => 'projects', :action => 'new' %></li>
+        <% else %>
+          <% @projectlist.each do |p| %>
+            <li><%= link_to p.name, :controller => 'projects' , :action => 'show', :id => p %></li>
+          <% end %>
+        <% end %>
+      </ul>
+    </li>
+    <% if local_assigns[:tab] == "project" %>
+      <li class="selected">
+      <% else %>
+      <li>
+      <% end %>
+      <%= link_to _("Projects"), :controller => 'projects', :action => 'index' %>
+    </li>
+    <li id="quick-search">
+      <a href="#" onclick="$('quick-search-bar').toggle(); $('q').focus(); return false">Search</a>
+    </li>
+  </ul>
+</div>

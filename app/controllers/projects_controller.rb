@@ -3,6 +3,7 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.find_all_projects
+    projectlist
   end
 
   def show
@@ -15,7 +16,8 @@ class ProjectsController < ApplicationController
       flash.now[:notice] = _("project") + " #{@project.name} " + _("Created Success")
       @project = Project.new
 #      redirect_to :controller => 'dashboard', :action => 'index'
-    end    
+    end
+    @projectlist = Project.find_all_projects
   end
 
   def edit
@@ -30,6 +32,7 @@ class ProjectsController < ApplicationController
     if request.post?
       project = Project.find(params[:id])
       project.destroy
+#      logger.info("#{Time.now} 删除 项目 ID ##{project.id}!")
     end
     redirect_to :action => :index
   end

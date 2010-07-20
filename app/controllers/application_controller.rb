@@ -11,4 +11,8 @@ class ApplicationController < ActionController::Base
   # GetText
   GetText.locale = "zh_CN"
   init_gettext "devicehub"
+
+  def projectlist
+    @projectlist = Project.find_all_projects
+  end
 end

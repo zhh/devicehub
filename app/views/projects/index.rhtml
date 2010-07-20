@@ -1,3 +1,7 @@
+<% content_for :project_nav do %>
+  <%= render :partial => 'dashboard/project_nav', :locals => { :tab => "project" } %>
+<% end %>
+
 <div id="ticket-list-wrapper" class="data-list hidden">
   <table cellspacing="0" cellpadding="0"  class="data issues">
     <thead>
@@ -23,5 +27,8 @@
       <% end %>
     </tbody>
   </table>
+</div>
 
-</div> 
+<% content_for :sbar do %>
+  <%= render :partial => 'dashboard/sbar' %>
+<% end %>

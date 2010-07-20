@@ -1,9 +1,7 @@
-<% @projectlist = Project.find_all_projects %>
-<% if @projectlist.empty? %>
-<div id="noproject" class="blankslate">
-  从这里开始 <%= link_to _("Create A New Project"), :controller => 'projects' , :action => 'new'  %> »
-</div>
-<% else %>
-  有货！
+<% content_for :project_nav do %>
+  <%= render :partial => 'dashboard/project_nav', :locals => { :tab => "overview" } %>
 <% end %>
 
+<% content_for :sbar do %>
+  <%= render :partial => 'dashboard/sbar' %>
+<% end %>

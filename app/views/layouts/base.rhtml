@@ -99,25 +99,8 @@
 
         <!-- main -->
         <div id="main">
-          <div id="project-nav">
-            <ul>
-              <li id="t-proj" class="submenu-tab selected">
-                <%= link_to _("Overview"), :controller => 'dashboard', :action => 'index' %>
-              </li>
-              <li>
-                <%= link_to _("Projects"), :controller => 'projects', :action => 'index' %>
-              </li>
-              <li>
-                <a href="http://zhh.lighthouseapp.com/messages">Messages</a>
-              </li>
-              <li>
-                <a href="http://zhh.lighthouseapp.com/attachments">Attachments</a>
-              </li>
-              <li id="quick-search">
-                <a href="#" onclick="$('quick-search-bar').toggle(); $('q').focus(); return false">Search</a>
-              </li>
-            </ul>
-          </div>
+
+          <%= yield :project_nav %>
 
           <div id="quick-search-bar" style="display: none;">
             <form action="/tickets" id="search-form" method="get">
@@ -126,12 +109,13 @@
             </form>
           </div>
 
-          <div id="action-nav">
+          <%= yield :action_nav %>
+          <!--<div id="action-nav">
             <ul class="clear">
               <li><%= link_to _("Edit"), :action => 'edit', :id => @project %></li>
               <li class="destructive"><%= link_to _("Delete"), '#', {:onclick => "Effect.toggle('delete-diag', 'blind'); return false;; return false;"} %></li>
             </ul>
-          </div>
+          </div>-->
 
           <div id="flashes">
             <div id="flash-errors" style="display: none;"></div>
@@ -141,7 +125,7 @@
           </div>
 
           <div id="page-top">
-            <%= yield :top %>
+            <%= yield :page_top %>
           </div>
 
           <div id="main-content" class="clear">
@@ -162,30 +146,7 @@
         <!-- sidebar -->
         <div id="sbar">
 
-          <span class="sbar-btn">
-            <a href="/projects/new" style="margin-top: 3px; margin-bottom: 9px;">
-              <img alt="New-project" class="plus-sign" src="/images/new-project.png"/><%= _("Create A New Project") %></a>
-          </span
-
-          <div class="proj-desc">
-            <p>项目描述</p>
-          </div>
-
-          <!--<div class="sblock">-->
-          <div id="shared-bin-block" class="sblock bin-block">
-            <%= render :partial => 'projects/projectlist' %>
-          </div>
-
-          <div class="sblock clear">
-            <h3>Pages </h3>
-            <ul class="link-list sortable" id="pagelist">
-              <li id="page_73136"><span class="handle" style="display: none;">↓↑
-                  drag</span><a href="http://zhh.lighthouseapp.com/home">Home</a></li>
-            </ul>
-
-            <a href="http://zhh.lighthouseapp.com/pages/new" class="btm-link">Add
-              account page</a>
-          </div>
+          <%= yield :sbar %>
 
         </div>
         <!-- /sidebar -->
