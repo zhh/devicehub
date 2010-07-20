@@ -1,7 +1,15 @@
 class ProjectsController < ApplicationController
   layout 'base'
 
-  def add_project
+  def index
+    @projects = Project.find_all_projects
+  end
+
+  def show
+    @project = Project.find(params[:id])
+  end
+
+  def new
     @project = Project.new(params[:project])
     if request.post? and @project.save
       flash.now[:notice] = _("project") + " #{@project.name} " + _("Created Success")
@@ -10,19 +18,19 @@ class ProjectsController < ApplicationController
     end    
   end
 
-  def list
-    @projects = Project.find_all_projects
-  end
-
-  def show
+  def edit
     @project = Project.find(params[:id])
+    if request.post? and @project.update_attributes(params[:project])
+      flash[:notice] = _("Update Success")
+      redirect_to :action => 'show', :id => @project
+    end
   end
 
-  def delete_project
+  def destroy
     if request.post?
       project = Project.find(params[:id])
       project.destroy
     end
-    redirect_to(:action => :list)
+    redirect_to :action => :index
   end
 end

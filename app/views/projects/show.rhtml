@@ -1,6 +1,6 @@
-<div id="page-top">
-  <div id="delete-diag" class="delete-dialog" style="display:none">
-    <% form_for :project, :url => { :action => :delete_project, :id => @project.id } do |f|%>      
+<% content_for :top do %>
+<div id="delete-diag" class="delete-dialog" style="display:none">
+    <% form_for :project, :url => { :action => :destroy, :id => @project } do |f|%>
       <p>确定删除此项目?删除后数据将不能恢复！</p>
       <p class="btns">
         <input class="button destructive" name="commit" type="submit" value="确定，删除！" />
@@ -31,6 +31,7 @@
 
     </div>
   </div>
+
   <div class="gbar clear">
     <ul class="clear">
       <li id="watch-ticket">
@@ -40,5 +41,4 @@
       </li>
     </ul>
   </div>
-
-</div>
+<% end %>

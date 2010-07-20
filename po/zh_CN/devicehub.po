@@ -38,6 +38,9 @@ msgstr "保存"
 msgid "Created Success"
 msgstr "新建成功"
 
+msgid "Update Success"
+msgstr "修改成功"
+
 msgid "User ID"
 msgstr "创建人"
 

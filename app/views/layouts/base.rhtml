@@ -105,7 +105,7 @@
                 <%= link_to _("Overview"), :controller => 'dashboard', :action => 'index' %>
               </li>
               <li>
-                <%= link_to _("Projects"), :controller => 'projects', :action => 'list' %>
+                <%= link_to _("Projects"), :controller => 'projects', :action => 'index' %>
               </li>
               <li>
                 <a href="http://zhh.lighthouseapp.com/messages">Messages</a>
@@ -119,13 +119,6 @@
             </ul>
           </div>
 
-          <div id="action-nav">
-            <ul class="clear">
-              <li><a href=""><%= _("Edit") %></a></li>
-              <li class="destructive"><a href="#" onclick="Effect.toggle('delete-diag', 'blind'); return false;; return false;"><%= _("Delete") %></a></li>
-            </ul>
-          </div>
-
           <div id="quick-search-bar" style="display: none;">
             <form action="/tickets" id="search-form" method="get">
               <label for="q">Find tickets:</label> <input id="q" name="q" type="search"/>
@@ -133,12 +126,22 @@
             </form>
           </div>
 
+          <div id="action-nav">
+            <ul class="clear">
+              <li><%= link_to _("Edit"), :action => 'edit', :id => @project %></li>
+              <li class="destructive"><%= link_to _("Delete"), '#', {:onclick => "Effect.toggle('delete-diag', 'blind'); return false;; return false;"} %></li>
+            </ul>
+          </div>
 
           <div id="flashes">
             <div id="flash-errors" style="display: none;"></div>
             <% if flash[:notice] -%>
               <div id="flash-notice"><%= flash[:notice] %></div>
             <% end -%>
+          </div>
+
+          <div id="page-top">
+            <%= yield :top %>
           </div>
 
           <div id="main-content" class="clear">
@@ -160,11 +163,16 @@
         <div id="sbar">
 
           <span class="sbar-btn">
-            <a href="/projects/add_project" style="margin-top: 3px; margin-bottom: 9px;">
+            <a href="/projects/new" style="margin-top: 3px; margin-bottom: 9px;">
               <img alt="New-project" class="plus-sign" src="/images/new-project.png"/><%= _("Create A New Project") %></a>
-          </span>
+          </span
 
-          <div class="sblock">
+          <div class="proj-desc">
+            <p>项目描述</p>
+          </div>
+
+          <!--<div class="sblock">-->
+          <div id="shared-bin-block" class="sblock bin-block">
             <%= render :partial => 'projects/projectlist' %>
           </div>
 
