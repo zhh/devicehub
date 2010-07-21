@@ -16,13 +16,26 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#Public-----------------------------------------------
+#Menu-----------------------------------------------
 msgid "Overview"
 msgstr "概况"
 
 msgid "Projects"
 msgstr "项目"
 
+msgid "Areas"
+msgstr "区域/库"
+
+msgid "Nodes"
+msgstr "节点"
+
+msgid "Devices"
+msgstr "设备"
+
+msgid "Messages"
+msgstr "信息"
+
+#Public---------------------------------------------
 msgid "User Management"
 msgstr "用户管理"
 
@@ -41,6 +54,7 @@ msgstr "新建成功"
 msgid "Update Success"
 msgstr "修改成功"
 
+#Fields-----------------------------------------------
 msgid "User ID"
 msgstr "创建人"
 
@@ -65,6 +79,49 @@ msgstr "项目描述"
 
 msgid "Create A New Project"
 msgstr "新建项目"
+
+msgid "Modify A New Project"
+msgstr "修改项目"
+
+#Area-------------------------------------------------
+msgid "area"
+msgstr "区域/库"
+
+msgid "Create A New Area"
+msgstr "新建区域/库"
+
+msgid "Modify A New Area"
+msgstr "修改区域/库"
+
+#Node-------------------------------------------------
+msgid "node"
+msgstr "节点"
+
+msgid "Create A New Node"
+msgstr "新建节点"
+
+msgid "Modify A New Node"
+msgstr "修改节点"
+
+#Device-------------------------------------------------
+msgid "device"
+msgstr "设备"
+
+msgid "Create A New Device"
+msgstr "新建设备"
+
+msgid "Modify A New Device"
+msgstr "修改设备"
+
+#Message-------------------------------------------------
+msgid "message"
+msgstr "信息"
+
+msgid "Create A New Message"
+msgstr "新建信息"
+
+msgid "Modify A New Message"
+msgstr "修改信息"
 
 #User-------------------------------------------------
 msgid "user"

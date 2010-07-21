@@ -1,9 +1,15 @@
 class ProjectsController < ApplicationController
   layout 'base'
 
+  before_filter :projectlist
+
   def index
     @projects = Project.find_all_projects
-    projectlist
+  end
+
+  def overview
+    @projects = Project.find_all_projects
+    @project = Project.find(params[:id])
   end
 
   def show

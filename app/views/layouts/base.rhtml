@@ -109,13 +109,7 @@
             </form>
           </div>
 
-          <%= yield :action_nav %>
-          <!--<div id="action-nav">
-            <ul class="clear">
-              <li><%= link_to _("Edit"), :action => 'edit', :id => @project %></li>
-              <li class="destructive"><%= link_to _("Delete"), '#', {:onclick => "Effect.toggle('delete-diag', 'blind'); return false;; return false;"} %></li>
-            </ul>
-          </div>-->
+          <%= yield :action_nav %>          
 
           <div id="flashes">
             <div id="flash-errors" style="display: none;"></div>

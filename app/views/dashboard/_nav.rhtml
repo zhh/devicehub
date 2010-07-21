@@ -5,7 +5,7 @@
       <% else %>
       <li id="t-proj" class="submenu-tab">
       <% end %>
-      <%= link_to _("Overview") + "<em>more</em>", :controller => 'projects', :action => 'overview', :id => @project %>
+      <%= link_to _("Overview") + "<em>more</em>", :controller => 'dashboard', :action => 'index' %>
       <ul style="display: none;" class="submenu">
         <% if @projectlist.empty? %>
           <li><%= link_to _("Create A New Project"), :controller => 'projects', :action => 'new' %></li>
@@ -15,19 +15,14 @@
           <% end %>
         <% end %>
       </ul>
-
-      <% if local_assigns[:tab] == "areas" %>
+    </li>
+    <% if local_assigns[:tab] == "project" %>
       <li class="selected">
       <% else %>
       <li>
       <% end %>
-      <%= link_to _("Areas"), :controller => 'Areas', :action => 'overview', :id => @project %>
+      <%= link_to _("Projects"), :controller => 'projects', :action => 'index' %>
     </li>
-
-    <li><%= link_to _("Nodes"), :controller => 'Areas', :action => 'index' %></li>
-    <li><%= link_to _("Devices"), :controller => 'Areas', :action => 'index' %></li>
-    <li><%= link_to _("Messages"), :controller => 'Areas', :action => 'index' %></li>
-
     <li id="quick-search">
       <a href="#" onclick="$('quick-search-bar').toggle(); $('q').focus(); return false">Search</a>
     </li>
