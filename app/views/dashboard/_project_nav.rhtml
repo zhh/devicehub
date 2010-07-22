@@ -7,13 +7,7 @@
       <% end %>
       <%= link_to _("Overview") + "<em>more</em>", :controller => 'projects', :action => 'overview', :id => @project %>
       <ul style="display: none;" class="submenu">
-        <% if @projectlist.empty? %>
-          <li><%= link_to _("Create A New Project"), :controller => 'projects', :action => 'new' %></li>
-        <% else %>
-          <% @projectlist.each do |p| %>
-            <li><%= link_to p.name, :controller => 'projects' , :action => 'overview', :id => p %></li>
-          <% end %>
-        <% end %>
+        <%= render :partial => 'dashboard/nav_project_list', :collection => @projectlist %>
       </ul>
 
       <% if local_assigns[:tab] == "areas" %>

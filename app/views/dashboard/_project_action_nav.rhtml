@@ -2,10 +2,10 @@
   <ul class="clear">    
     <% if local_assigns[:tab] == "editproject" %>
       <li><%= link_to _("Edit"), :action => 'edit', :id => @project %></li>
-      <li><%= link_to _("Create A New Area"), :action => '' %></li>
-      <li><%= link_to _("Create A New Node"), :action => '' %></li>
-      <li><%= link_to _("Create A New Device"), :action => '' %></li>
-      <li><%= link_to _("Create A New Message"), :action => '' %></li>
+      <li><%= link_to _("Create A New Area"), :controller => :areas, :action => 'new', :id => @project %></li>
+      <li><%= link_to _("Create A New Node"), :controller => :nodes, :action => 'new', :id => @project %></li>
+      <li><%= link_to _("Create A New Device"), :controller => :devices, :action => 'new', :id => @project %></li>
+      <li><%= link_to _("Create A New Message"), :controller => :messages, :action => 'new', :id => @project %></li>
     <% end %>
 
     <% if local_assigns[:tab] == "destroyproject" %>
@@ -13,7 +13,7 @@
     <% end %>
 
     <% if local_assigns[:tab] == "newarea" %>
-      <li><%= link_to _("Create A New Area"), :action => '' %></li>
+      <li><%= link_to _("Create A New Area"), :controller => :areas, :action => 'new', :id => @project %></li>
     <% end %>
   </ul>
 </div>

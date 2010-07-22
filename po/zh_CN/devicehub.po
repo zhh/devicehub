@@ -24,7 +24,7 @@ msgid "Projects"
 msgstr "项目"
 
 msgid "Areas"
-msgstr "区域/库"
+msgstr "区域(库)"
 
 msgid "Nodes"
 msgstr "节点"
@@ -53,6 +53,9 @@ msgstr "新建成功"
 
 msgid "Update Success"
 msgstr "修改成功"
+
+msgid "Destroy Success"
+msgstr "删除成功"
 
 #Fields-----------------------------------------------
 msgid "User ID"
@@ -85,13 +88,19 @@ msgstr "修改项目"
 
 #Area-------------------------------------------------
 msgid "area"
-msgstr "区域/库"
+msgstr "区域(库)"
+
+msgid "Area|Name"
+msgstr "区域(库)名称"
+
+msgid "Area|Description"
+msgstr "区域(库)描述"
 
 msgid "Create A New Area"
-msgstr "新建区域/库"
+msgstr "新建区域(库)"
 
 msgid "Modify A New Area"
-msgstr "修改区域/库"
+msgstr "修改区域(库)"
 
 #Node-------------------------------------------------
 msgid "node"
