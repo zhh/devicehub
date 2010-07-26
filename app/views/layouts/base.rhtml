@@ -59,9 +59,14 @@
           <li><%= link_to _("User Management"), :controller => 'users', :action => 'add_user' %></li>
         </ul>
         <div id="titles">
-          <h1>
-            <strong id="account-name">Account</strong>
-            <%= link_to "白糕", {:controller => 'dashboard'}, :class => 'pname' %>
+          <h1>            
+            <% if @project %>
+              <strong id="account-name"><%= link_to "白糕", {:controller => 'dashboard'} %></strong>
+              <%= link_to @project.name, {:controller => 'projects', :action => 'overview', :id => @project}, :class => 'pname' %>
+            <% else %>
+              <strong id="account-name">Account</strong>
+              <%= link_to "白糕", {:controller => 'dashboard'}, :class => 'pname' %>
+            <% end %>
           </h1>
         </div>
 
@@ -109,7 +114,7 @@
             </form>
           </div>
 
-          <%= yield :action_nav %>          
+          <%= yield :action_nav %>
 
           <div id="flashes">
             <div id="flash-errors" style="display: none;"></div>

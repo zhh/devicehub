@@ -1,5 +1,5 @@
 <% content_for :project_nav do %>
-  <%= render :partial => 'dashboard/project_nav', :locals => { :tab => "project" } %>
+  <%= render :partial => 'dashboard/nav', :locals => { :tab => "project" } %>
 <% end %>
 
 <div id="ticket-list-wrapper" class="data-list hidden">
@@ -11,7 +11,7 @@
         <th><%= link_to _("Project|Name"), :action => '' %></th>
         <th><%= link_to _("Project|Description"), :action => '' %></th>
         <th><%= link_to _("User ID"), :action => '' %></th>
-        <th class="hlast"><%= link_to _("Created At") + "<span class='desc'>&darr;</span>", :action => '', :class => 'sorted' %></th>
+        <th class="hlast"><%= link_to _("Created At") + "<span class='desc'>&darr;</span>", :action => 'index', :order => 'created_at desc', :class => 'sorted' %></th>
       </tr>
     </thead>
     <tbody id="open-tickets">

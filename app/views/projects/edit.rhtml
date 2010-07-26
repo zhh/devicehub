@@ -3,7 +3,7 @@
 <% end %>
 
 <% content_for :action_nav do %>
-  <%= render :partial => 'dashboard/project_action_nav', :locals => { :tab => "destroyproject" } %>
+  <%= render :partial => 'dashboard/project_action_nav', :locals => { :tab => "editproject" } %>
 <% end %>
 
 <%= error_messages_for 'project' %>
@@ -14,5 +14,5 @@
     <p class="btns right">
       <%= submit_tag _("Save"), :class => "button" %>
     </p>
-  </div>
-<% end %>
+  <% end %>
+</div>

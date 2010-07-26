@@ -3,12 +3,12 @@ class ProjectsController < ApplicationController
 
   before_filter :projectlist
 
-  def index
-    @projects = Project.find_all_projects
+  def index    
+    @projects = Project.find_all_projects(params[:order])
   end
 
   def overview
-    @projects = Project.find_all_projects
+    @projects = Project.find_all_projects('created_at desc')
     @project = Project.find(params[:id])
   end
 

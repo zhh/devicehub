@@ -13,6 +13,6 @@ class ApplicationController < ActionController::Base
   init_gettext "devicehub"
 
   def projectlist
-    @projectlist = Project.find_all_projects
+    @projectlist = Project.find_all_projects('created_at desc')
   end
 end

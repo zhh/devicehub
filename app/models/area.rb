@@ -11,4 +11,8 @@ class Area < ActiveRecord::Base
   def self.find_all_areas
     find(:all, :order => 'created_at desc')
   end
+
+  def self.find_all_project_areas(project)
+    find_all_by_project_id(project)
+  end
 end

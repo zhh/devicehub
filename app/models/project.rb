@@ -7,7 +7,7 @@ class Project < ActiveRecord::Base
   validates_length_of :description, :maximum => 255
 
   # 查询所有项目
-  def self.find_all_projects
-    find(:all, :order => 'created_at desc')
+  def self.find_all_projects(order)
+    find(:all, :order => order)
   end
 end
