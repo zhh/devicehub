@@ -106,6 +106,12 @@ msgstr "修改区域(库)"
 msgid "node"
 msgstr "节点"
 
+msgid "Node|Name"
+msgstr "节点名称"
+
+msgid "Node|Description"
+msgstr "节点描述"
+
 msgid "Create A New Node"
 msgstr "新建节点"
 

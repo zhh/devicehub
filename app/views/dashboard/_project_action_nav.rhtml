@@ -19,6 +19,14 @@
     <% if local_assigns[:tab] == "editarea" %>
       <li class="destructive"><%= link_to _("Delete"), '#', {:onclick => "Effect.toggle('delete-diag-area', 'blind'); return false;; return false;"} %></li>
     <% end %>
+
+    <% if local_assigns[:tab] == "newareanode" %>
+      <li><%= link_to _("Create A New Node"), :controller => :nodes, :action => 'newareanode', :id => @area %></li>
+    <% end %>
+
+    <% if local_assigns[:tab] == "newnode" %>
+      <li><%= link_to _("Create A New Node"), :controller => :nodes, :action => 'new', :id => @project %></li>
+    <% end %>
   </ul>
 </div>
 

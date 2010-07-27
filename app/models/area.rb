@@ -1,6 +1,7 @@
 class Area < ActiveRecord::Base
   belongs_to :project
   belongs_to :user
+  has_many :nodes
 
   validates_presence_of :name, :description
   validates_uniqueness_of :name

@@ -1,10 +1,12 @@
 <% content_for :project_nav do %>
-  <%= render :partial => 'dashboard/project_nav', :locals => { :tab => "areas" } %>
+  <%= render :partial => 'dashboard/project_nav', :locals => { :tab => "areanodes" } %>
 <% end %>
 
 <% content_for :action_nav do %>
-  <%= render :partial => 'dashboard/project_action_nav', :locals => { :tab => "newarea" } %>
+  <%= render :partial => 'dashboard/project_action_nav', :locals => { :tab => "newareanode" } %>
 <% end %>
+
+<h3><%= @area.name %></h3>
 
 <div id="ticket-list-wrapper" class="data-list hidden">
   <table cellspacing="0" cellpadding="0"  class="data issues">
@@ -12,25 +14,25 @@
       <tr>
         <th class="bulk_check_header"><input type="checkbox" id="edit-all-toggle" /></th>
         <th class="hfirst" style="width:25px;text-align:center"><a href="" class="">#</a></th>
-        <th><%= link_to _("Area|Name"), :action => '' %></th>
-        <th><%= link_to _("node"), :action => '' %></th>
+        <th><%= link_to _("Node|Name"), :action => '' %></th>
+        <th><%= link_to _("area"), :action => '' %></th>
         <th><%= link_to _("device"), :action => '' %></th>
-        <th><%= link_to _("Area|Description"), :action => '' %></th>
+        <th><%= link_to _("Node|Description"), :action => '' %></th>
         <th><%= link_to _("User ID"), :action => '' %></th>
         <th class="hlast"><%= link_to _("Created At") + "<span class='desc'>&darr;</span>", :action => '', :class => 'sorted' %></th>
       </tr>
     </thead>
     <tbody id="open-tickets">
-      <% @areas.each do |area| %>
+      <% @area.nodes.each do |node| %>
       <tr>
         <td class="bulk_checkbox"><input class="edit-flag" id="edit_ticket_1682377" name="edit_ticket[]" type="checkbox" value="1" /></td>
         <td class="tnum" style="text-align:center"><a href="http://zhh.lighthouseapp.com/projects/52334/tickets/1-no1ticket">1</a></td>
-        <td class="ttstate"><%= link_to area.name, :action => 'edit', :id => area %></td>
-        <td class="ttstate"><%= link_to area.nodes.count, :controller => 'nodes', :action => 'areanodes', :id => area %></td>
-        <td class="ttstate"><%= link_to '24', :controller => 'devices',:action => 'overview', :id => area %></td>
-        <td><%= area.description %></td>
-        <td><%= area.user.name  %> </td>
-        <td><%= area.created_at %></td>
+        <td class="ttstate"><%= link_to node.name, :action => 'edit', :id => node %></td>
+        <td class="ttstate"><%= link_to '10', :controller => 'nodes', :action => 'overview', :id => node %></td>
+        <td class="ttstate"><%= link_to '24', :controller => 'devices',:action => 'overview', :id => node %></td>
+        <td><%= node.description %></td>
+        <td><%= node.user.name  %> </td>
+        <td><%= node.created_at %></td>
       </tr>
       <% end %>
     </tbody>

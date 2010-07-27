@@ -5,20 +5,25 @@
       <% else %>
       <li id="t-proj" class="submenu-tab">
       <% end %>
-      <%= link_to _("Overview") + "<em>more</em>", :controller => 'projects', :action => 'overview', :id => @project %>
-      <ul style="display: none;" class="submenu">
-        <%= render :partial => 'dashboard/nav_project_list', :collection => @projectlist %>
-      </ul>
+      <%= link_to _("Overview") + "<em>more</em>", :controller => 'projects', :action => 'overview', :id => @project %></li>
+    <ul style="display: none;" class="submenu">
+      <%= render :partial => 'dashboard/nav_project_list', :collection => @projectlist %>
+    </ul>
 
-      <% if local_assigns[:tab] == "areas" %>
+    <% if local_assigns[:tab] == "areas" %>
       <li class="selected">
       <% else %>
       <li>
       <% end %>
-      <%= link_to _("Areas"), :controller => 'Areas', :action => 'overview', :id => @project %>
-    </li>
+      <%= link_to _("Areas"), :controller => 'areas', :action => 'overview', :id => @project %></li>
 
-    <li><%= link_to _("Nodes"), :controller => 'Areas', :action => 'index' %></li>
+    <% if local_assigns[:tab] == "areanodes" %>
+      <li class="selected">
+      <% else %>
+      <li>
+      <% end %>
+      <%= link_to _("Nodes"), :controller => 'nodes', :action => 'newareanode', :id => @area %></li>
+
     <li><%= link_to _("Devices"), :controller => 'Areas', :action => 'index' %></li>
     <li><%= link_to _("Messages"), :controller => 'Areas', :action => 'index' %></li>
 
