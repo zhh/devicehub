@@ -16,4 +16,8 @@ class Area < ActiveRecord::Base
   def self.find_all_project_areas(project)
     find_all_by_project_id(project)
   end
+
+  def before_destroy
+    raise "Can't delete AREA" unless self.nodes.empty?
+  end
 end

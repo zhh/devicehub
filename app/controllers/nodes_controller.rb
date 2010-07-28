@@ -24,4 +24,23 @@ class NodesController < ApplicationController
       redirect_to :action => 'areanodes', :id => area
     end
   end
+
+  def edit
+    @node = Node.find(params[:id])
+    @project = @node.area.project
+    if request.post? and @node.update_attributes(params[:node])
+      flash[:notice] = _("Update Success")
+      redirect_to :action => 'overview', :id => @project
+    end
+  end
+
+  def destroy
+    if request.post?
+      node = Node.find(params[:id])
+      node.destroy
+      flash[:notice] = _("node") + " #{node.name} " + _("Destroy Success")
+#      logger.info("#{Time.now} 删除 项目 ID ##{project.id}!")
+    end    
+    redirect_to :action => :overview, :id => node.area.project
+  end
 end

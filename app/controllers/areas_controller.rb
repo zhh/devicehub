@@ -29,10 +29,14 @@ class AreasController < ApplicationController
 
   def destroy
     if request.post?
-      area = Area.find(params[:id])      
-      area.destroy
-      flash[:notice] = _("area") + " #{area.name} " + _("Destroy Success")
-#      logger.info("#{Time.now} 删除 项目 ID ##{project.id}!")
+      area = Area.find(params[:id])
+      begin
+        area.destroy
+        flash[:notice] = _("area") + " #{area.name} " + _("Destroy Success")
+      rescue Exception => e
+        flash[:notice] = e.message
+      end      
+      #      logger.info("#{Time.now} 删除 项目 ID ##{project.id}!")
     end
     redirect_to :action => :overview, :id => area.project
   end
