@@ -117,7 +117,9 @@
           <%= yield :action_nav %>
 
           <div id="flashes">
-            <div id="flash-errors" style="display: none;"></div>
+            <% if flash[:errors] -%>
+              <div id="flash-errors"><%= flash[:errors] %></div>
+            <% end -%>
             <% if flash[:notice] -%>
               <div id="flash-notice"><%= flash[:notice] %></div>
             <% end -%>

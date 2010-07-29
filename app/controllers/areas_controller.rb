@@ -34,7 +34,7 @@ class AreasController < ApplicationController
         area.destroy
         flash[:notice] = _("area") + " #{area.name} " + _("Destroy Success")
       rescue Exception => e
-        flash[:notice] = e.message
+        flash[:errors] = e.message
       end      
       #      logger.info("#{Time.now} 删除 项目 ID ##{project.id}!")
     end

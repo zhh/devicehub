@@ -86,6 +86,9 @@ msgstr "新建项目"
 msgid "Modify A New Project"
 msgstr "修改项目"
 
+msgid "project_destroy_fail_for_areas"
+msgstr "删除项目失败，必须删除该项目的所有区域（库）才能删除项目！"
+
 #Area-------------------------------------------------
 msgid "area"
 msgstr "区域(库)"
@@ -101,6 +104,10 @@ msgstr "新建区域(库)"
 
 msgid "Modify A New Area"
 msgstr "修改区域(库)"
+
+msgid "area_destroy_fail_for_nodes"
+msgstr "删除区域(库)失败，必须删除该区域(库)的所有节点才能删除区域(库)！"
+
 
 #Node-------------------------------------------------
 msgid "node"

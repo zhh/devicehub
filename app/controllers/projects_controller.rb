@@ -21,7 +21,7 @@ class ProjectsController < ApplicationController
     @project.user_id = 2
     if request.post? and @project.save
       flash[:notice] = _("project") + " #{@project.name} " + _("Created Success")
-#      @project = Project.new
+      #      @project = Project.new
       redirect_to :action => 'overview', :id => @project
     end    
   end
@@ -37,10 +37,15 @@ class ProjectsController < ApplicationController
   def destroy
     if request.post?
       project = Project.find(params[:id])
-      project.destroy
-      flash[:notice] = _("project") + " #{project.name} " + _("Destroy Success")
-#      logger.info("#{Time.now} 删除 项目 ID ##{project.id}!")
-    end
-    redirect_to :controller => :dashboard, :action => :index
+      begin
+        project.destroy
+        flash[:notice] = _("project") + " #{project.name} " + _("Destroy Success")
+        redirect_to :controller => :dashboard, :action => :index
+      rescue Exception => e
+        flash[:errors] = e.message
+        redirect_to :controller => :projects, :action => :overview, :id => project
+        #      logger.info("#{Time.now} 删除 项目 ID ##{project.id}!")
+      end
+    end    
   end
 end

@@ -18,6 +18,6 @@ class Area < ActiveRecord::Base
   end
 
   def before_destroy
-    raise "Can't delete AREA" unless self.nodes.empty?
+    raise _("area_destroy_fail_for_nodes") unless self.nodes.empty?
   end
 end

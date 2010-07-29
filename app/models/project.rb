@@ -10,4 +10,8 @@ class Project < ActiveRecord::Base
   def self.find_all_projects(order)
     find(:all, :order => order)
   end
+
+  def before_destroy
+    raise _("project_destroy_fail_for_areas") unless self.areas.empty?
+  end
 end
