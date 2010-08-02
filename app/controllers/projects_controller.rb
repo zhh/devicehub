@@ -28,6 +28,7 @@ class ProjectsController < ApplicationController
 
   def edit
     @project = Project.find(params[:id])
+    @delete = @project
     if request.post? and @project.update_attributes(params[:project])
       flash[:notice] = _("Update Success")
       redirect_to :action => 'overview', :id => @project
@@ -40,7 +41,7 @@ class ProjectsController < ApplicationController
       begin
         project.destroy
         flash[:notice] = _("project") + " #{project.name} " + _("Destroy Success")
-        redirect_to :controller => :dashboard, :action => :index
+        redirect_to :controller => :projects, :action => :index
       rescue Exception => e
         flash[:errors] = e.message
         redirect_to :controller => :projects, :action => :overview, :id => project

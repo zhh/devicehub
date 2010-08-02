@@ -1,9 +1,5 @@
 <% content_for :project_nav do %>
-  <%= render :partial => 'dashboard/project_nav', :locals => { :tab => "overview" } %>
-<% end %>
-
-<% content_for :action_nav do %>
-  <%= render :partial => 'dashboard/project_action_nav', :locals => { :tab => "destroyproject" } %>
+  <%= render :partial => 'dashboard/nav', :locals => { :tab => "project" } %>
 <% end %>
 
 <%= error_messages_for 'project' %>

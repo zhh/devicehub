@@ -17,7 +17,7 @@
     <% end %>
 
     <% if local_assigns[:tab] == "editarea" %>
-      <li class="destructive"><%= link_to _("Delete"), '#', {:onclick => "Effect.toggle('delete-diag-area', 'blind'); return false;; return false;"} %></li>
+      <li class="destructive"><%= link_to _("Delete"), '#', {:onclick => "Effect.toggle('delete-diag', 'blind'); return false;; return false;"} %></li>
     <% end %>
 
     <% if local_assigns[:tab] == "newareanode" %>
@@ -25,41 +25,11 @@
     <% end %>
 
     <% if local_assigns[:tab] == "editnode" %>
-      <li class="destructive"><%= link_to _("Delete"), '#', {:onclick => "Effect.toggle('delete-diag-node', 'blind'); return false;; return false;"} %></li>
+      <li class="destructive"><%= link_to _("Delete"), '#', {:onclick => "Effect.toggle('delete-diag', 'blind'); return false;; return false;"} %></li>      
     <% end %>
 
     <% if local_assigns[:tab] == "newnode" %>
       <li><%= link_to _("Create A New Node"), :controller => :nodes, :action => 'new', :id => @project %></li>
     <% end %>
   </ul>
-</div>
-
-<div id="delete-diag" class="delete-dialog" style="display:none">
-  <% form_for :project, :url => { :action => :destroy, :id => @project } do |f|%>
-    <p>确定删除?删除后数据将不能恢复！</p>
-    <p class="btns">
-      <input class="button destructive" name="commit" type="submit" value="确定，删除！" />
-      <a href="#" class="button" onclick="Effect.toggle('delete-diag', 'blind'); return false;">取消</a>
-    </p>
-  <% end %>
-</div>
-
-<div id="delete-diag-area" class="delete-dialog" style="display:none">
-  <% form_for :area, :url => { :action => :destroy, :id => @area } do |f|%>
-    <p>确定删除?删除后数据将不能恢复！</p>
-    <p class="btns">
-      <input class="button destructive" name="commit" type="submit" value="确定，删除！" />
-      <a href="#" class="button" onclick="Effect.toggle('delete-diag', 'blind'); return false;">取消</a>
-    </p>
-  <% end %>
-</div>
-
-<div id="delete-diag-node" class="delete-dialog" style="display:none">
-  <% form_for :node, :url => { :action => :destroy, :id => @node } do |f|%>
-    <p>确定删除?删除后数据将不能恢复！</p>
-    <p class="btns">
-      <input class="button destructive" name="commit" type="submit" value="确定，删除！" />
-      <a href="#" class="button" onclick="Effect.toggle('delete-diag', 'blind'); return false;">取消</a>
-    </p>
-  <% end %>
 </div>

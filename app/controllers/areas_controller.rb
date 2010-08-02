@@ -21,6 +21,7 @@ class AreasController < ApplicationController
   def edit
     @area = Area.find(params[:id])
     @project = @area.project
+    @delete = @area
     if request.post? and @area.update_attributes(params[:area])
       flash[:notice] = _("Update Success")
       redirect_to :action => 'overview', :id => @project

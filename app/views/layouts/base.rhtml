@@ -60,7 +60,7 @@
         </ul>
         <div id="titles">
           <h1>            
-            <% if @project %>
+            <% if @project and @project.name  %>
               <strong id="account-name"><%= link_to "白糕", {:controller => 'dashboard'} %></strong>
               <%= link_to @project.name, {:controller => 'projects', :action => 'overview', :id => @project}, :class => 'pname' %>
             <% else %>
@@ -104,8 +104,8 @@
 
         <!-- main -->
         <div id="main">
-
-          <%= yield :project_nav %>
+          
+          <div id="project-nav"><%= yield :project_nav %></div>          
 
           <div id="quick-search-bar" style="display: none;">
             <form action="/tickets" id="search-form" method="get">
@@ -115,75 +115,73 @@
           </div>
 
           <%= yield :action_nav %>
+          
 
           <div id="flashes">
-            <% if flash[:errors] -%>
-              <div id="flash-errors"><%= flash[:errors] %></div>
-            <% end -%>
-            <% if flash[:notice] -%>
-              <div id="flash-notice"><%= flash[:notice] %></div>
-            <% end -%>
+            <%= flash_errors(flash[:errors], :id => "flash-errors") %><%= flash[:errors] %></div>
+            <%= flash_notice(flash[:notice], :id => "flash-notice") %><%= flash[:notice] %></div>
           </div>
 
-          <div id="page-top">
-            <%= yield :page_top %>
-          </div>
-
-          <div id="main-content" class="clear">
-            <!--
-            <div class="link-bar">
-              <a class="atom" href="http://zhh.lighthouseapp.com/events.atom">Subscribe</a>
-            </div>
-            <div id="events">
-              <ul class="data events"></ul>
-            </div>
-            -->
-            <%= yield :layout%>
-          </div>
-        </div>
-
-        <!-- /main -->
-
-        <!-- sidebar -->
-        <div id="sbar">
-
-          <%= yield :sbar %>
-
-        </div>
-        <!-- /sidebar -->
-
+      <div id="page-top">        
+        <%= render(:partial => "dashboard/delete", :object => @delete) if @delete %>
+        <%= yield :page_top %>        
       </div>
-      <!-- /content -->
 
-      <!-- footer -->
-      <div id="footer">
-        <div id="footer-cnt">
-          <a href="http://engineyard.com/" id="eylogo"><img src="/images/eylogo.png" alt="Engine Yard" title="Our excellent Ruby on Rails host"/></a>
-          <ul id="ftr-links">
-            <li id="entp"><a href="http://entp.com/" title="The folks who
-                             built this">activereload/entp</a></li>
-            <li><a
-                href="http://help.lighthouseapp.com/?sso=ZCVHl2xArrQHuyc1W88PlRa17EajohqOSy6ZS1PXujKX9nEl84zNIZEKeE9IMk8UqXlkylxO4iwGnBkrdMZFzCDAJp189apiRJ8e4eT1phg_ogHrq2KBjbFv_pqpfGrjsv-z3gblPKPNBOgk-JMz_QzWkRwS2eUZmn1cKkXCDVyU1U34t1yoU-i8dush-mdhNS87iiehVTLM4pFD02cAhWrbWcz56GeQwusippoTzbk16uzrx9LGRUR36ntLRB8Cf1zH2-EyuAvXO3MAbaiy5ez95k98NEB54hG01ymb7miOHVJjP-gvG31ist6ZX7XZSHsdnrcNhVfSlT9q0VNpow%3D"
-                title="File a support request"><strong>Lighthouse Support</strong></a></li>
-            <li><a href="http://lhstatus.com/" title="Keep tabs on the
-                   status of Lighthouse"><strong>Status</strong></a></li>
-            <li><a href="http://hoth.entp.com/" title="Read our stuff">Our
-                blog</a></li>
-            <li><a
-                href="http://help.lighthouseapp.com/faqs?sso=ZCVHl2xArrQHuyc1W88PlRa17EajohqOSy6ZS1PXujKX9nEl84zNIZEKeE9IMk8UqXlkylxO4iwGnBkrdMZFzCDAJp189apiRJ8e4eT1phg_ogHrq2KBjbFv_pqpfGrjsv-z3gblPKPNBOgk-JMz_QzWkRwS2eUZmn1cKkXCDVyU1U34t1yoU-i8dush-mdhNS87iiehVTLM4pFD02cAhWrbWcz56GeQwusippoTzbk16uzrx9LGRUR36ntLRB8Cf1zH2-EyuAvXO3MAbaiy5ez95k98NEB54hG01ymb7miOHVJjP-gvG31ist6ZX7XZSHsdnrcNhVfSlT9q0VNpow%3D"
-                title="Frequently Asked Questions">FAQ</a></li>
-            <li><a href="http://lighthouseapp.com/api" title="Developer
-                   API documentation and examples">API</a></li>
-            <li><a href="http://lighthouseapp.com/privacy" title="Privacy">Privacy</a></li>
-            <li><a href="http://lighthouseapp.com/terms" title="Terms of
-                   service">Terms of service</a></li>
-          </ul>
-          <p>Copyright © 2007-2010 <a href="http://entp.com/">activereload/entp</a>
-            with hosting and servers sponsored by our friends at <a
-              href="http://engineyard.com/">Engine Yard</a>.</p>
+      <div id="main-content" class="clear">
+        <!--
+        <div class="link-bar">
+          <a class="atom" href="http://zhh.lighthouseapp.com/events.atom">Subscribe</a>
         </div>
+        <div id="events">
+          <ul class="data events"></ul>
+        </div>
+        -->
+        <%= yield :layout%>
       </div>
-      <!-- /footer -->
+    </div>
+
+    <!-- /main -->
+
+    <!-- sidebar -->
+    <div id="sbar">
+
+      <%= yield :sbar %>
+
+    </div>
+    <!-- /sidebar -->
+
+    </div>
+    <!-- /content -->
+
+    <!-- footer -->
+    <div id="footer">
+      <div id="footer-cnt">
+        <a href="http://engineyard.com/" id="eylogo"><img src="/images/eylogo.png" alt="Engine Yard" title="Our excellent Ruby on Rails host"/></a>
+        <ul id="ftr-links">
+          <li id="entp"><a href="http://entp.com/" title="The folks who
+                           built this">activereload/entp</a></li>
+          <li><a
+              href="http://help.lighthouseapp.com/?sso=ZCVHl2xArrQHuyc1W88PlRa17EajohqOSy6ZS1PXujKX9nEl84zNIZEKeE9IMk8UqXlkylxO4iwGnBkrdMZFzCDAJp189apiRJ8e4eT1phg_ogHrq2KBjbFv_pqpfGrjsv-z3gblPKPNBOgk-JMz_QzWkRwS2eUZmn1cKkXCDVyU1U34t1yoU-i8dush-mdhNS87iiehVTLM4pFD02cAhWrbWcz56GeQwusippoTzbk16uzrx9LGRUR36ntLRB8Cf1zH2-EyuAvXO3MAbaiy5ez95k98NEB54hG01ymb7miOHVJjP-gvG31ist6ZX7XZSHsdnrcNhVfSlT9q0VNpow%3D"
+              title="File a support request"><strong>Lighthouse Support</strong></a></li>
+          <li><a href="http://lhstatus.com/" title="Keep tabs on the
+                 status of Lighthouse"><strong>Status</strong></a></li>
+          <li><a href="http://hoth.entp.com/" title="Read our stuff">Our
+              blog</a></li>
+          <li><a
+              href="http://help.lighthouseapp.com/faqs?sso=ZCVHl2xArrQHuyc1W88PlRa17EajohqOSy6ZS1PXujKX9nEl84zNIZEKeE9IMk8UqXlkylxO4iwGnBkrdMZFzCDAJp189apiRJ8e4eT1phg_ogHrq2KBjbFv_pqpfGrjsv-z3gblPKPNBOgk-JMz_QzWkRwS2eUZmn1cKkXCDVyU1U34t1yoU-i8dush-mdhNS87iiehVTLM4pFD02cAhWrbWcz56GeQwusippoTzbk16uzrx9LGRUR36ntLRB8Cf1zH2-EyuAvXO3MAbaiy5ez95k98NEB54hG01ymb7miOHVJjP-gvG31ist6ZX7XZSHsdnrcNhVfSlT9q0VNpow%3D"
+              title="Frequently Asked Questions">FAQ</a></li>
+          <li><a href="http://lighthouseapp.com/api" title="Developer
+                 API documentation and examples">API</a></li>
+          <li><a href="http://lighthouseapp.com/privacy" title="Privacy">Privacy</a></li>
+          <li><a href="http://lighthouseapp.com/terms" title="Terms of
+                 service">Terms of service</a></li>
+        </ul>
+        <p>Copyright © 2007-2010 <a href="http://entp.com/">activereload/entp</a>
+          with hosting and servers sponsored by our friends at <a
+            href="http://engineyard.com/">Engine Yard</a>.</p>
+      </div>
+    </div>
+    <!-- /footer -->
     </div>
     <!-- /container -->
 

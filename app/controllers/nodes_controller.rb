@@ -28,8 +28,9 @@ class NodesController < ApplicationController
   def edit
     @node = Node.find(params[:id])
     @project = @node.area.project
+    @delete = @node
     if request.post? and @node.update_attributes(params[:node])
-      flash[:notice] = _("Update Success")
+      flash[:notice] = _("Update Success")      
       redirect_to :action => 'overview', :id => @project
     end
   end
