@@ -1,33 +1,58 @@
-
-  <ul>
-    <% if local_assigns[:tab] == "overview" %>
+<ul>
+  
+    <% if project_nav == "dashboard" %>
       <li id="t-proj" class="submenu-tab selected">
-      <% else %>
+        <%= link_to _("Overview") + "<em>more</em>", :controller => 'dashboard', :action => 'index' %>
+        <ul style="display: none;" class="submenu">
+          <%= render :partial => 'dashboard/nav_project_list', :collection => @projectlist %>
+        </ul>
+      </li>
+      <li><%= link_to _("Projects"), :controller => 'projects', :action => 'index' %></li>
+    <% end %>
+
+
+    <% if project_nav == "projects" %>
       <li id="t-proj" class="submenu-tab">
-      <% end %>
-      <%= link_to _("Overview") + "<em>more</em>", :controller => 'projects', :action => 'overview', :id => @project %></li>
-    <ul style="display: none;" class="submenu">
-      <%= render :partial => 'dashboard/nav_project_list', :collection => @projectlist %>
-    </ul>
+        <%= link_to _("Overview") + "<em>more</em>", :controller => 'dashboard', :action => 'index' %>
+        <ul style="display: none;" class="submenu">
+          <%= render :partial => 'dashboard/nav_project_list', :collection => @projectlist %>
+        </ul>
+      </li>
+      <li class="selected"><%= link_to _("Projects"), :controller => 'projects', :action => 'index' %></li>
+    <% end %>
 
-    <% if local_assigns[:tab] == "areas" %>
-      <li class="selected">
-      <% else %>
-      <li>
-      <% end %>
-      <%= link_to _("Areas"), :controller => 'areas', :action => 'overview', :id => @project %></li>
+    <% if project_nav == "projects_overview" %>
+      <li id="t-proj" class="submenu-tab">
+        <%= link_to _("Overview") + "<em>more</em>", :controller => 'dashboard', :action => 'index' %>
+        <ul style="display: none;" class="submenu">
+          <%= render :partial => 'dashboard/nav_project_list', :collection => @projectlist %>
+        </ul>
+      </li>
+      <li class="selected"><%= link_to _("Projects"), :controller => 'projects', :action => 'index' %></li>
+      <li><%= link_to _("Areas"), :controller => 'areas', :action => 'overview', :id => @project %></li>
+      <li><%= link_to _("Nodes"), :controller => 'nodes', :action => 'newareanode', :id => @area %></li>
+    <% end %>
 
-    <% if local_assigns[:tab] == "areanodes" %>
-      <li class="selected">
-      <% else %>
-      <li>
-      <% end %>
+
+    <% if project_nav == "areas_overview" %>
+      <li id="t-proj" class="submenu-tab">
+        <%= link_to _("Overview") + "<em>more</em>", :controller => 'dashboard', :action => 'index' %>
+        <ul style="display: none;" class="submenu">
+          <%= render :partial => 'dashboard/nav_project_list', :collection => @projectlist %>
+        </ul>
+      </li>
+      <li><%= link_to _("Projects"), :controller => 'projects', :action => 'index' %></li>
+      <li class="selected"><%= link_to _("Areas"), :controller => 'areas', :action => 'overview', :id => @project %></li>
+      <li><%= link_to _("Nodes"), :controller => 'nodes', :action => 'newareanode', :id => @area %></li>
+    <% end %>
+
+    <% if project_nav == "areanodes" %>
+      <li class="selected">      
       <%= link_to _("Nodes"), :controller => 'nodes', :action => 'newareanode', :id => @area %></li>
+    <% end %>
+ 
 
-    <li><%= link_to _("Devices"), :controller => 'Areas', :action => 'index' %></li>
-    <li><%= link_to _("Messages"), :controller => 'Areas', :action => 'index' %></li>
-
-    <li id="quick-search">
-      <a href="#" onclick="$('quick-search-bar').toggle(); $('q').focus(); return false">Search</a>
-    </li>
-  </ul>
+  <li id="quick-search">
+    <a href="#" onclick="$('quick-search-bar').toggle(); $('q').focus(); return false">Search</a>
+  </li>
+</ul>

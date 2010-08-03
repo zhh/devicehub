@@ -1,35 +1,37 @@
-<div id="action-nav">
-  <ul class="clear">    
-    <% if local_assigns[:tab] == "editproject" %>
-      <li><%= link_to _("Edit"), :action => 'edit', :id => @project %></li>
-      <li><%= link_to _("Create A New Area"), :controller => :areas, :action => 'new', :id => @project %></li>
-      <li><%= link_to _("Create A New Node"), :controller => :nodes, :action => 'new', :id => @project %></li>
-      <li><%= link_to _("Create A New Device"), :controller => :devices, :action => 'new', :id => @project %></li>
-      <li><%= link_to _("Create A New Message"), :controller => :messages, :action => 'new', :id => @project %></li>
-    <% end %>
+<ul class="clear">
+  <% if project_action_nav == "project_new" %>
+    <li><%= link_to _("Create A New Project"), :action => 'new' %></li>
+  <% end %>
 
-    <% if local_assigns[:tab] == "editproject" %>
-      <li class="destructive"><%= link_to _("Delete"), '#', {:onclick => "Effect.toggle('delete-diag', 'blind'); return false;; return false;"} %></li>
-    <% end %>
+  <% if project_action_nav == "projects_overview" %>
+    <li><%= link_to _("Edit"), :action => 'edit', :id => @project %></li>
+    <li><%= link_to _("Create A New Area"), :controller => :areas, :action => 'new', :id => @project %></li>
+    <li><%= link_to _("Create A New Node"), :controller => :nodes, :action => 'new', :id => @project %></li>
+    <li><%= link_to _("Create A New Device"), :controller => :devices, :action => 'new', :id => @project %></li>
+    <li><%= link_to _("Create A New Message"), :controller => :messages, :action => 'new', :id => @project %></li>
+  <% end %>
 
-    <% if local_assigns[:tab] == "newarea" %>
-      <li><%= link_to _("Create A New Area"), :controller => :areas, :action => 'new', :id => @project %></li>
-    <% end %>
+  <% if project_action_nav == "project_destroy" %>
+    <li class="destructive"><%= link_to _("Delete"), '#', {:onclick => "Effect.toggle('delete-diag', 'blind'); return false;; return false;"} %></li>
+  <% end %>
 
-    <% if local_assigns[:tab] == "editarea" %>
-      <li class="destructive"><%= link_to _("Delete"), '#', {:onclick => "Effect.toggle('delete-diag', 'blind'); return false;; return false;"} %></li>
-    <% end %>
+  <% if project_action_nav == "area_new" %>
+    <li><%= link_to _("Create A New Area"), :controller => :areas, :action => 'new', :id => @project %></li>
+  <% end %>
 
-    <% if local_assigns[:tab] == "newareanode" %>
-      <li><%= link_to _("Create A New Node"), :controller => :nodes, :action => 'newareanode', :id => @area %></li>
-    <% end %>
+  <% if project_action_nav == "area_destroy" %>
+    <li class="destructive"><%= link_to _("Delete"), '#', {:onclick => "Effect.toggle('delete-diag', 'blind'); return false;; return false;"} %></li>
+  <% end %>
 
-    <% if local_assigns[:tab] == "editnode" %>
-      <li class="destructive"><%= link_to _("Delete"), '#', {:onclick => "Effect.toggle('delete-diag', 'blind'); return false;; return false;"} %></li>      
-    <% end %>
+  <% if project_action_nav == "newareanode" %>
+    <li><%= link_to _("Create A New Node"), :controller => :nodes, :action => 'newareanode', :id => @area %></li>
+  <% end %>
 
-    <% if local_assigns[:tab] == "newnode" %>
-      <li><%= link_to _("Create A New Node"), :controller => :nodes, :action => 'new', :id => @project %></li>
-    <% end %>
-  </ul>
-</div>
+  <% if project_action_nav == "editnode" %>
+    <li class="destructive"><%= link_to _("Delete"), '#', {:onclick => "Effect.toggle('delete-diag', 'blind'); return false;; return false;"} %></li>
+  <% end %>
+
+  <% if project_action_nav == "newnode" %>
+    <li><%= link_to _("Create A New Node"), :controller => :nodes, :action => 'new', :id => @project %></li>
+  <% end %>
+</ul>

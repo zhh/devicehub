@@ -1,0 +1,9 @@
+<div id="delete-diag" class="delete-dialog" style="display:none">
+  <% form_for destroy_obj.to_s, :url => { :action => :destroy, :id => destroy_obj } do |f|%>
+    <p>确定删除?删除后数据将不能恢复！</p>
+    <p class="btns">
+      <input class="button destructive" name="commit" type="submit" value="确定，删除！" />
+      <a href="#" class="button" onclick="Effect.toggle('delete-diag', 'blind'); return false;">取消</a>
+    </p>
+  <% end %>
+</div>

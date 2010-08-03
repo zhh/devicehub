@@ -4,24 +4,30 @@ class AreasController < ApplicationController
   before_filter :projectlist
 
   def overview
+    @nav = "areas_overview"
+    @action = "area_new"
     @project = Project.find(params[:id])
-    @areas = Area.find_all_project_areas(@project)
+    @areas = Area.find_all_project_areas(@project)    
   end
 
   def new
-    @project = Project.find(params[:id])
-    area = Area.new(params[:area])
-    area.user_id = 1
-    if request.post? and @project.areas << area
-      flash[:notice] = _("area") + " #{area.name} " + _("Created Success")
+    @nav = "areas_overview"
+    @action = "area_new"
+    @project = Project.find(params[:id])    
+    @area = Area.new(params[:area])
+    @area.user_id = 1
+    if request.post? and @project.areas << @area
+      flash[:notice] = _("area") + " #{@area.name} " + _("Created Success")
       redirect_to :action => 'overview', :id => @project
     end
   end
 
   def edit
+    @nav = "areas_overview"
+    @action = "area_destroy"
     @area = Area.find(params[:id])
     @project = @area.project
-    @delete = @area
+    @destroy_obj = @area
     if request.post? and @area.update_attributes(params[:area])
       flash[:notice] = _("Update Success")
       redirect_to :action => 'overview', :id => @project

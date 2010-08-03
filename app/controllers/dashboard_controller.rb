@@ -3,6 +3,7 @@ class DashboardController < ApplicationController
   
   def index
     projectlist
+    @nav = "dashboard"
   end
 
 end

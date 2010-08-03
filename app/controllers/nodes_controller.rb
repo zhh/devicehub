@@ -4,6 +4,8 @@ class NodesController < ApplicationController
   before_filter :projectlist
 
   def overview
+    @nav = "nodes_overview"
+    @action = "node_new"
     @project = Project.find(params[:id])
     @nodes = Node.find_all_project_nodes(@project)
   end
@@ -16,11 +18,10 @@ class NodesController < ApplicationController
   def newareanode
     area = Area.find(params[:id])
     @project = area.project
-    node = Node.new(params[:node])
-    node.area = area
-    node.user_id = 1
-    if request.post? and area.nodes << node
-      flash[:notice] = _("node") + " #{node.name} " + _("Created Success")
+    @node = Node.new(params[:node])
+    @node.user_id = 1
+    if request.post? and area.nodes << @node
+      flash[:notice] = _("node") + " #{@node.name} " + _("Created Success")
       redirect_to :action => 'areanodes', :id => area
     end
   end
@@ -28,7 +29,7 @@ class NodesController < ApplicationController
   def edit
     @node = Node.find(params[:id])
     @project = @node.area.project
-    @delete = @node
+    @destroy_obj = @node
     if request.post? and @node.update_attributes(params[:node])
       flash[:notice] = _("Update Success")      
       redirect_to :action => 'overview', :id => @project

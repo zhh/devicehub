@@ -105,7 +105,9 @@
         <!-- main -->
         <div id="main">
           
-          <div id="project-nav"><%= yield :project_nav %></div>          
+          <div id="project-nav">
+            <%= render(:partial => 'dashboard/project_nav', :object => @nav) %>
+          </div>
 
           <div id="quick-search-bar" style="display: none;">
             <form action="/tickets" id="search-form" method="get">
@@ -114,7 +116,9 @@
             </form>
           </div>
 
-          <%= yield :action_nav %>
+          <div id="action-nav">
+            <%= render(:partial => 'dashboard/project_action_nav', :object => @action) %>
+          </div>
           
 
           <div id="flashes">
@@ -123,7 +127,7 @@
           </div>
 
       <div id="page-top">        
-        <%= render(:partial => "dashboard/delete", :object => @delete) if @delete %>
+        <%= render(:partial => "dashboard/destroy_obj", :object => @destroy_obj) if @destroy_obj %>
         <%= yield :page_top %>        
       </div>
 

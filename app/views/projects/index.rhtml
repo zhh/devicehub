@@ -1,7 +1,3 @@
-<% content_for :project_nav do %>
-  <%= render :partial => 'dashboard/nav', :locals => { :tab => "project" } %>
-<% end %>
-
 <div id="ticket-list-wrapper" class="data-list hidden">
   <table cellspacing="0" cellpadding="0"  class="data issues">
     <thead>
@@ -9,6 +5,7 @@
         <th class="bulk_check_header"><input type="checkbox" id="edit-all-toggle" /></th>
         <th class="hfirst" style="width:25px;text-align:center"><a href="" class="">#</a></th>
         <th><%= link_to _("Project|Name"), :action => '' %></th>
+        <th><%= link_to _("area"), :action => '' %></th>
         <th><%= link_to _("Project|Description"), :action => '' %></th>
         <th><%= link_to _("User ID"), :action => '' %></th>
         <th class="hlast"><%= link_to _("Created At") + "<span class='desc'>&darr;</span>", :action => 'index', :order => 'created_at desc', :class => 'sorted' %></th>
@@ -20,6 +17,7 @@
         <td class="bulk_checkbox"><input class="edit-flag" id="edit_ticket_1682377" name="edit_ticket[]" type="checkbox" value="1" /></td>
         <td class="tnum" style="text-align:center"><a href="http://zhh.lighthouseapp.com/projects/52334/tickets/1-no1ticket">1</a></td>
         <td class="ttstate"><%= link_to project.name, :action => 'overview', :id => project %></td>
+        <td class="ttstate"><%= link_to project.areas.count, :controller => 'areas', :action => 'overview', :id => project %></td>
         <td><%= project.description %></td>
         <td><%= %> </td>
         <td><%= project.created_at %></td>

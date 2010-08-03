@@ -3,32 +3,35 @@ class ProjectsController < ApplicationController
 
   before_filter :projectlist
 
-  def index    
+  def index
+    @nav = "projects"
+    @action = "project_new"
     @projects = Project.find_all_projects(params[:order])
   end
 
   def overview
+    @nav = "projects_overview"
+    @action = "projects_overview"
     @projects = Project.find_all_projects('created_at desc')
     @project = Project.find(params[:id])
   end
 
-  def show
-    @project = Project.find(params[:id])
-  end
-
   def new
+    @nav = "projects"
+    @action = "project_new"
     @project = Project.new(params[:project])
     @project.user_id = 2
     if request.post? and @project.save
       flash[:notice] = _("project") + " #{@project.name} " + _("Created Success")
-      #      @project = Project.new
       redirect_to :action => 'overview', :id => @project
     end    
   end
 
   def edit
+    @nav = "projects_overview"
+    @action = "project_destroy"
     @project = Project.find(params[:id])
-    @delete = @project
+    @destroy_obj = @project
     if request.post? and @project.update_attributes(params[:project])
       flash[:notice] = _("Update Success")
       redirect_to :action => 'overview', :id => @project

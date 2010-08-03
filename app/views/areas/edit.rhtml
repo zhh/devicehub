@@ -1,11 +1,3 @@
-<% content_for :project_nav do %>
-  <%= render :partial => 'dashboard/project_nav', :locals => { :tab => "areas" } %>
-<% end %>
-
-<% content_for :action_nav do %>
-  <%= render :partial => 'dashboard/project_action_nav', :locals => { :tab => "editarea" } %>
-<% end %>
-
 <%= error_messages_for 'area' %>
 <div class="group">
   <h3><%= _("Modify A New Area") %></h3>
