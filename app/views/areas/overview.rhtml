@@ -6,7 +6,7 @@
         <th class="hfirst" style="width:25px;text-align:center"><a href="" class="">#</a></th>
         <th><%= link_to _("Area|Name"), :action => '' %></th>
         <th><%= link_to _("node"), :action => '' %></th>
-        <th><%= link_to _("device"), :action => '' %></th>
+        <th><%= link_to _("project"), :action => '' %></th>
         <th><%= link_to _("Area|Description"), :action => '' %></th>
         <th><%= link_to _("User ID"), :action => '' %></th>
         <th class="hlast"><%= link_to _("Created At") + "<span class='desc'>&darr;</span>", :action => '', :class => 'sorted' %></th>
@@ -18,8 +18,8 @@
         <td class="bulk_checkbox"><input class="edit-flag" id="edit_ticket_1682377" name="edit_ticket[]" type="checkbox" value="1" /></td>
         <td class="tnum" style="text-align:center"><a href="http://zhh.lighthouseapp.com/projects/52334/tickets/1-no1ticket">1</a></td>
         <td class="ttstate"><%= link_to area.name, :action => 'edit', :id => area %></td>
-        <td class="ttstate"><%= link_to area.nodes.count, :controller => 'nodes', :action => 'areanodes', :id => area %></td>
-        <td class="ttstate"><%= link_to '24', :controller => 'devices',:action => 'overview', :id => area %></td>
+        <td class="ttstate"><%= link_to area.nodes.count, :controller => 'nodes', :action => 'list_for_area', :id => area %></td>
+        <td class="ttstate"><%= link_to area.project.name, :controller => 'projects', :action => 'overview', :id => area.project %></td>
         <td><%= area.description %></td>
         <td><%= area.user.name  %> </td>
         <td><%= area.created_at %></td>

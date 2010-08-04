@@ -10,7 +10,16 @@ class NodesController < ApplicationController
     @nodes = Node.find_all_project_nodes(@project)
   end
 
-  def areanodes
+  def list
+    @nav = "nodes_overview"
+    @action = "node_new"
+    @project = Project.find(params[:id])
+    @nodes = Node.find_all_project_nodes(@project)
+  end
+
+  def list_for_area
+    @nav = "nodes_overview"
+    @action = "node_new"
     @area = Area.find(params[:id])
     @project = @area.project
   end
@@ -23,6 +32,18 @@ class NodesController < ApplicationController
     if request.post? and area.nodes << @node
       flash[:notice] = _("node") + " #{@node.name} " + _("Created Success")
       redirect_to :action => 'areanodes', :id => area
+    end
+  end
+
+  def new
+    @nav = "nodes_overview"
+    @action = "node_new"
+    @project = Project.find(params[:id])
+    @node = Node.new(params[:node])
+    @node.user_id = 1
+    if request.post? and @node.save
+      flash[:notice] = _("node") + " #{@node.name} " + _("Created Success")
+      redirect_to :action => 'list', :id => @project
     end
   end
 

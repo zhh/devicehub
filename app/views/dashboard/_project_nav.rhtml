@@ -30,7 +30,7 @@
       </li>
       <li class="selected"><%= link_to _("Projects"), :controller => 'projects', :action => 'index' %></li>
       <li><%= link_to _("Areas"), :controller => 'areas', :action => 'overview', :id => @project %></li>
-      <li><%= link_to _("Nodes"), :controller => 'nodes', :action => 'newareanode', :id => @area %></li>
+      <li><%= link_to _("Nodes"), :controller => 'nodes', :action => 'list', :id => @project %></li>
     <% end %>
 
 
@@ -43,12 +43,24 @@
       </li>
       <li><%= link_to _("Projects"), :controller => 'projects', :action => 'index' %></li>
       <li class="selected"><%= link_to _("Areas"), :controller => 'areas', :action => 'overview', :id => @project %></li>
-      <li><%= link_to _("Nodes"), :controller => 'nodes', :action => 'newareanode', :id => @area %></li>
+      <li><%= link_to _("Nodes"), :controller => 'nodes', :action => 'list', :id => @project %></li>
+    <% end %>
+
+    <% if project_nav == "nodes_overview" %>
+      <li id="t-proj" class="submenu-tab">
+        <%= link_to _("Overview") + "<em>more</em>", :controller => 'dashboard', :action => 'index' %>
+        <ul style="display: none;" class="submenu">
+          <%= render :partial => 'dashboard/nav_project_list', :collection => @projectlist %>
+        </ul>
+      </li>
+      <li><%= link_to _("Projects"), :controller => 'projects', :action => 'index' %></li>
+      <li><%= link_to _("Areas"), :controller => 'areas', :action => 'overview', :id => @project %></li>
+      <li class="selected"><%= link_to _("Nodes"), :controller => 'nodes', :action => 'list', :id => @project %></li>
     <% end %>
 
     <% if project_nav == "areanodes" %>
       <li class="selected">      
-      <%= link_to _("Nodes"), :controller => 'nodes', :action => 'newareanode', :id => @area %></li>
+      <li><%= link_to _("Nodes"), :controller => 'nodes', :action => 'overview', :id => @project %></li>
     <% end %>
  
 

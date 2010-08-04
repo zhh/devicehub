@@ -1,6 +1,11 @@
 <table class="form-tbl" cellpadding="0" cellspacing="0">
   <tbody>
     <tr>
+      <th><label for="node_area_id"><%= _("Node|Area") %></label></th>
+      <td><%= select("node", "area_id", Area.find_all_project_areas(@project).collect {|p| [ p.name, p.id ] }, :prompt => "请选择一个区域（库）") %></td>
+    </tr>
+    
+    <tr>
       <th><label for="node_name"><%= _("Node|Name") %></label></th>
       <td><%= f.text_field :name, :class => "big", :size => 30 %></td>
     </tr>
