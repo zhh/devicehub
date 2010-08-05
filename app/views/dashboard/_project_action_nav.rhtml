@@ -23,15 +23,11 @@
     <li class="destructive"><%= link_to _("Delete"), '#', {:onclick => "Effect.toggle('delete-diag', 'blind'); return false;; return false;"} %></li>
   <% end %>
 
-  <% if project_action_nav == "newareanode" %>
-    <li><%= link_to _("Create A New Node"), :controller => :nodes, :action => 'newareanode', :id => @area %></li>
-  <% end %>
-
-  <% if project_action_nav == "editnode" %>
-    <li class="destructive"><%= link_to _("Delete"), '#', {:onclick => "Effect.toggle('delete-diag', 'blind'); return false;; return false;"} %></li>
-  <% end %>
-
   <% if project_action_nav == "node_new" %>
     <li><%= link_to _("Create A New Node"), :controller => :nodes, :action => 'new', :id => @project %></li>
+  <% end %>
+
+  <% if project_action_nav == "node_destroy" %>
+    <li class="destructive"><%= link_to _("Delete"), '#', {:onclick => "Effect.toggle('delete-diag', 'blind'); return false;; return false;"} %></li>
   <% end %>
 </ul>

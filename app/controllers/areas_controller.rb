@@ -18,7 +18,7 @@ class AreasController < ApplicationController
     @area.user_id = 1
     if request.post? and @project.areas << @area
       flash[:notice] = _("area") + " #{@area.name} " + _("Created Success")
-      redirect_to :action => 'overview', :id => @project
+      redirect_to :action => :overview, :id => @project
     end
   end
 
@@ -30,13 +30,13 @@ class AreasController < ApplicationController
     @destroy_obj = @area
     if request.post? and @area.update_attributes(params[:area])
       flash[:notice] = _("Update Success")
-      redirect_to :action => 'overview', :id => @project
+      redirect_to :action => :overview, :id => @project
     end
   end
 
   def destroy
-    if request.post?
-      area = Area.find(params[:id])
+    area = Area.find(params[:id])
+    if request.post?      
       begin
         area.destroy
         flash[:notice] = _("area") + " #{area.name} " + _("Destroy Success")

@@ -128,7 +128,7 @@ msgstr "节点区域(库)"
 msgid "Create A New Node"
 msgstr "新建节点"
 
-msgid "Modify A New Node"
+msgid "Modify A Node"
 msgstr "修改节点"
 
 #Device-------------------------------------------------

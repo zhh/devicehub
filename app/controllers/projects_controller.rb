@@ -39,8 +39,8 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
-    if request.post?
-      project = Project.find(params[:id])
+    project = Project.find(params[:id])
+    if request.post?      
       begin
         project.destroy
         flash[:notice] = _("project") + " #{project.name} " + _("Destroy Success")

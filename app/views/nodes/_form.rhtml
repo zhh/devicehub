@@ -2,7 +2,7 @@
   <tbody>
     <tr>
       <th><label for="node_area_id"><%= _("Node|Area") %></label></th>
-      <td><%= select("node", "area_id", Area.find_all_project_areas(@project).collect {|p| [ p.name, p.id ] }, :prompt => "请选择一个区域（库）") %></td>
+      <td><%= f.select :area_id, Area.project_areas_to_array(@project), :prompt => "请选择一个区域（库）" %></td>
     </tr>
     
     <tr>

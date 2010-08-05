@@ -43,27 +43,29 @@ class NodesController < ApplicationController
     @node.user_id = 1
     if request.post? and @node.save
       flash[:notice] = _("node") + " #{@node.name} " + _("Created Success")
-      redirect_to :action => 'list', :id => @project
+      redirect_to :action => :list, :id => @project
     end
   end
 
   def edit
+    @nav = "nodes_overview"
+    @action = "node_destroy"
     @node = Node.find(params[:id])
     @project = @node.area.project
     @destroy_obj = @node
     if request.post? and @node.update_attributes(params[:node])
       flash[:notice] = _("Update Success")      
-      redirect_to :action => 'overview', :id => @project
+      redirect_to :action => :list, :id => @project
     end
   end
 
   def destroy
-    if request.post?
-      node = Node.find(params[:id])
+    node = Node.find(params[:id])
+    if request.post?      
       node.destroy
       flash[:notice] = _("node") + " #{node.name} " + _("Destroy Success")
 #      logger.info("#{Time.now} 删除 项目 ID ##{project.id}!")
     end    
-    redirect_to :action => :overview, :id => node.area.project
+    redirect_to :action => :list, :id => node.area.project
   end
 end
