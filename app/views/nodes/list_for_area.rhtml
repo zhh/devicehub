@@ -22,13 +22,13 @@
     <tbody id="open-tickets">
       <% @area.nodes.each do |node| %>
       <tr>
-        <td class="bulk_checkbox"><input class="edit-flag" id="edit_ticket_1682377" name="edit_ticket[]" type="checkbox" value="1" /></td>
-        <td class="tnum" style="text-align:center"><a href="http://zhh.lighthouseapp.com/projects/52334/tickets/1-no1ticket">1</a></td>
+        <td class="bulk_checkbox"><input class="edit-flag" id="edit_ticket_1682377" name="edit_ticket[]" type="checkbox" value="1" /></td>        
+        <td class="tnum" style="text-align:center">1</td>
         <td class="ttstate"><%= link_to node.name, :action => 'edit', :id => node %></td>        
         <td class="ttstate"><%= link_to '24', :controller => 'devices',:action => 'overview', :id => node %></td>
         <td><%= node.description %></td>
         <td><%= node.user.name  %> </td>
-        <td><%= node.created_at %></td>
+        <td><%= node.created_at.to_date %></td>
       </tr>
       <% end %>
     </tbody>

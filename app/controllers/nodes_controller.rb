@@ -19,21 +19,10 @@ class NodesController < ApplicationController
 
   def list_for_area
     @nav = "nodes_overview"
-    @action = "node_new"
+    @action = "node_new_for_area"
     @area = Area.find(params[:id])
     @project = @area.project
-  end
-
-  def newareanode
-    area = Area.find(params[:id])
-    @project = area.project
-    @node = Node.new(params[:node])
-    @node.user_id = 1
-    if request.post? and area.nodes << @node
-      flash[:notice] = _("node") + " #{@node.name} " + _("Created Success")
-      redirect_to :action => 'areanodes', :id => area
-    end
-  end
+  end 
 
   def new
     @nav = "nodes_overview"
@@ -47,15 +36,42 @@ class NodesController < ApplicationController
     end
   end
 
+  def new_for_area
+    @nav = "nodes_overview"
+    @action = "node_new_for_area"
+    @area = Area.find(params[:id])
+    @project = @area.project
+    @node = Node.new(params[:node])
+    @node.user_id = 1
+    if request.post? and @area.nodes << @node
+      flash[:notice] = _("node") + " #{@node.name} " + _("Created Success")
+      redirect_to :action => :list_for_area, :id => @area
+    end
+  end
+
   def edit
     @nav = "nodes_overview"
-    @action = "node_destroy"
+    @action = "node_destroy_move"
     @node = Node.find(params[:id])
-    @project = @node.area.project
+    @area = @node.area
+    @project = @area.project
     @destroy_obj = @node
     if request.post? and @node.update_attributes(params[:node])
       flash[:notice] = _("Update Success")      
-      redirect_to :action => :list, :id => @project
+      redirect_to :action => :list_for_area, :id => @area
+    end
+  end
+
+  def move
+    @nav = "nodes_overview"
+    @action = "node_destroy_move"
+    @node = Node.find(params[:id])
+    @area = @node.area
+    @project = @area.project
+    @destroy_obj = @node
+    if request.post? and @node.update_attributes(params[:node])
+      flash[:notice] = _("Update Success")
+      redirect_to :action => :list_for_area, :id => @area
     end
   end
 

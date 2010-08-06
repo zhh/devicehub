@@ -45,17 +45,26 @@ msgstr "修改"
 msgid "Delete"
 msgstr "删除"
 
+msgid "Move"
+msgstr "移动"
+
 msgid "Save"
 msgstr "保存"
 
 msgid "Saving"
 msgstr "正在保存"
 
+msgid "Move to"
+msgstr "移动到"
+
 msgid "Created Success"
 msgstr "新建成功"
 
 msgid "Update Success"
 msgstr "修改成功"
+
+msgid "Move Success"
+msgstr "移动成功"
 
 msgid "Destroy Success"
 msgstr "删除成功"
@@ -105,8 +114,11 @@ msgstr "区域(库)描述"
 msgid "Create A New Area"
 msgstr "新建区域(库)"
 
-msgid "Modify A New Area"
+msgid "Modify A Area"
 msgstr "修改区域(库)"
+
+msgid "Move A Area"
+msgstr "移动区域(库)"
 
 msgid "area_destroy_fail_for_nodes"
 msgstr "删除区域(库)失败，必须删除该区域(库)的所有节点才能删除区域(库)！"

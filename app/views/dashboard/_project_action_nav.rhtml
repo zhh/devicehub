@@ -19,15 +19,21 @@
     <li><%= link_to _("Create A New Area"), :controller => :areas, :action => 'new', :id => @project %></li>
   <% end %>
 
-  <% if project_action_nav == "area_destroy" %>
+  <% if project_action_nav == "area_destroy_move" %>
     <li class="destructive"><%= link_to _("Delete"), '#', {:onclick => "Effect.toggle('delete-diag', 'blind'); return false;; return false;"} %></li>
+    <li class="destructive"><%= link_to _("Move"), :controller => :areas, :action => 'move', :id => @area %></li>
   <% end %>
 
   <% if project_action_nav == "node_new" %>
     <li><%= link_to _("Create A New Node"), :controller => :nodes, :action => 'new', :id => @project %></li>
   <% end %>
 
-  <% if project_action_nav == "node_destroy" %>
+  <% if project_action_nav == "node_new_for_area" %>
+    <li><%= link_to _("Create A New Node"), :controller => :nodes, :action => 'new_for_area', :id => @area %></li>
+  <% end %>
+
+  <% if project_action_nav == "node_destroy_move" %>
     <li class="destructive"><%= link_to _("Delete"), '#', {:onclick => "Effect.toggle('delete-diag', 'blind'); return false;; return false;"} %></li>
+    <li class="destructive"><%= link_to _("Move"), :controller => :nodes, :action => 'move', :id => @node %></li>
   <% end %>
 </ul>

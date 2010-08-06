@@ -11,6 +11,15 @@ class Project < ActiveRecord::Base
     find(:all, :order => order)
   end
 
+  def self.projects_to_array
+    ps = find(:all)
+    projects = []
+    ps.each do |p|
+      projects << [p.name, p.id]
+    end
+    projects
+  end
+
   def before_destroy
     raise _("project_destroy_fail_for_areas") unless self.areas.empty?
   end

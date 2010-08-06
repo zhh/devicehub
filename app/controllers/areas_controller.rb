@@ -34,6 +34,18 @@ class AreasController < ApplicationController
     end
   end
 
+  def move
+    @nav = "areas_overview"
+    @action = "area_destroy_move"
+    @area = Area.find(params[:id])
+    @project = @area.project
+    @destroy_obj = @area
+    if request.post? and @area.update_attributes(params[:area])
+      flash[:notice] = _("Move Success")
+      redirect_to :action => :overview, :id => @project
+    end
+  end
+
   def destroy
     area = Area.find(params[:id])
     if request.post?      
