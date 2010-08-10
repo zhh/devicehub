@@ -44,6 +44,6 @@ production:
   database: devicehub_production
   pool: 5
   username: devicehub
-  password: 
-  socket: /var/run/mysqld/mysqld.sock
+  password: devicehubok
+  #socket: /var/run/mysqld/mysqld.sock
 
