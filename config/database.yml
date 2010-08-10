@@ -42,8 +42,8 @@ production:
   encoding: utf8
   reconnect: false
   database: devicehub_production
-  pool: 5
+  pool: 10
   username: devicehub
-  password: 
-  socket: /var/run/mysqld/mysqld.sock
+  password: devicehubok
+  #socket: /var/run/mysqld/mysqld.sock
 
