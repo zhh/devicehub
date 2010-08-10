@@ -17,6 +17,7 @@ set :deploy_to, "/var/www/#{application}"
 set :user, "zhh"
 set :runner, "root"
 default_run_options[:pty] = true
+set :rake, "/usr/local/bin/rake"
 
  namespace :deploy do
    task :start do ; end
@@ -25,3 +26,9 @@ default_run_options[:pty] = true
      run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
    end
  end
+
+desc "Symlink shared configs and folders on each release."
+   task :symlink_shared do
+     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+   end
+after 'deploy:update_code', 'deploy:symlink_shared'
