@@ -274,7 +274,7 @@ strong#account-name a {
   -moz-border-radius: 3px;
   border-radius: 3px;
   border: 1px solid #fff;
-  background: #fff url(/images/app/droparrow.png) 100% 50% no-repeat;
+  background: #fff url(../images/app/droparrow.png) 100% 50% no-repeat;
 }
 
 .webkit #userbadge #membership-q {
@@ -414,7 +414,7 @@ a#help:hover {
 }
 
 li#dashboard a {
-  background: #047 url(/images/app/list.gif) 9px 9px no-repeat;
+  background: #047 url(../images/app/list.gif) 9px 9px no-repeat;
   padding-left: 30px;
 }
 
@@ -493,7 +493,7 @@ li#nticket a:hover { background-color: #444; color: #fff;}
   text-indent: -9999px;
   right: 8px;
   top: 11px;
-  background: #057 url(/images/app/droparrow.gif) 5px 6px no-repeat;
+  background: #057 url(../images/app/droparrow.gif) 5px 6px no-repeat;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   -o-border-radius: 2px;
@@ -644,11 +644,11 @@ li#nticket a:hover { background-color: #444; color: #fff;}
   position: absolute;
   right: 0;
   top: 0;
-  background: url(/images/app/tr.gif) top right no-repeat;
+  background: url(../images/app/tr.gif) top right no-repeat;
 }
 
 li#quick-search a {
-  background: url(/images/app/search.png) no-repeat;
+  background: url(../images/app/search.png) no-repeat;
   width: 33px;
   text-indent: -9999px;
   padding: 8px 0;
@@ -1036,7 +1036,7 @@ div.link-bar {
 }
 
 a.csv,a.atom {
-  background: url(/images/app/icons/rss.png) 0 50% no-repeat;
+  background: url(../images/app/icons/rss.png) 0 50% no-repeat;
   padding-left: 21px;
   font-weight: bold;
   color: #333;
@@ -1053,7 +1053,7 @@ a.csv {
   -moz-border-radius: 2px;
   border-radius: 2px;
   background-position: 3px 50%;
-  background-image: url(/images/app/icons/csv.gif);
+  background-image: url(../images/app/icons/csv.gif);
 }
 
 a.csv:hover,a.atom:hover {
@@ -1154,7 +1154,7 @@ li.event ul {
 }
 
 li.event ul li {
-  background: url(/images/app/bullet.gif) 2px 50% no-repeat;
+  background: url(../images/app/bullet.gif) 2px 50% no-repeat;
   padding-left: 18px;
 }
 
@@ -1368,7 +1368,7 @@ a.pedit:hover {
 .smodal h3 {
   padding: 5px 5px 0px 5px;
   font-size: 92%;
-  background: #548EB8 url(/images/app/tr.gif) top right no-repeat;
+  background: #548EB8 url(../images/app/tr.gif) top right no-repeat;
   position: relative;
   text-shadow: 1px 1px #fff;
 }
@@ -1487,7 +1487,7 @@ ul.wbadges li.aproj a {
 
 ul.components li {
   padding: 8px 10px 8px 30px;
-  background: url(/images/app/icons/bug-large.png) 0 50% no-repeat;
+  background: url(../images/app/icons/bug-large.png) 0 50% no-repeat;
 }
 
 .smeta {
@@ -1524,14 +1524,14 @@ ul.components li {
 }
 
 .mstone-chart {
-  background: url(/images/app/mstone-chart-bg.gif) no-repeat;
+  background: url(../images/app/mstone-chart-bg.gif) no-repeat;
   height: 22px;
   padding: 5px 0 0 6px;
   position: relative;
 }
 
 .mstone-progress {
-  background: url(/images/app/mstone-progress.gif) top left no-repeat;
+  background: url(../images/app/mstone-progress.gif) top left no-repeat;
   height: 17px;
   position: absolute;
   right: 12px;
@@ -1558,7 +1558,7 @@ ul.components li {
 }
 
 /*li.current-bin a {
-  background: url(/images/app/check.png) 98% 50% no-repeat;
+  background: url(../images/app/check.png) 98% 50% no-repeat;
   padding-right: 20px;
 }*/
 
@@ -1787,7 +1787,7 @@ div.cs-body {
   padding-left: 15px;
   border: none !important;
   text-decoration: none;
-  background: url(/images/app/icons/feed.gif) 0 50% no-repeat;
+  background: url(../images/app/icons/feed.gif) 0 50% no-repeat;
   line-height: 100%;
 }
 
@@ -1815,7 +1815,7 @@ td.issue {
 }
 
 td.closed {
-  background: url(/images/app/icons/closed.png) 5px 50% no-repeat;
+  background: url(../images/app/icons/closed.png) 5px 50% no-repeat;
 }
 
 td.date {
@@ -2224,7 +2224,7 @@ a span.job {
   width:10px;
   height:10px;
   display:block;
-  background-image: url(/images/priority-stoplight.gif);
+  background-image: url(../images/priority-stoplight.gif);
 }
 
 .tprio-icon-high {
@@ -2572,7 +2572,7 @@ li.attachment {
 li.attachment a.item {
   padding: 0px 0 18px 38px;
   margin: 6px 6px 6px 0;
-  background: url(/images/app/mime/attachment.png) 0 50% no-repeat;
+  background: url(../images/app/mime/attachment.png) 0 50% no-repeat;
   display: block;
   font-size: 92%;
 }
@@ -2592,14 +2592,14 @@ li.attachment a.item {
   visibility: visible;
 }
 
-li.apdf  a.item { background-image: url(/images/app/mime/pdf.png);}
-li.axls  a.item { background-image: url(/images/app/mime/xls.png);}
-li.adiff a.item { background-image: url(/images/app/mime/diff.png);}
-li.atxt  a.item { background-image: url(/images/app/mime/txt.png);}
-li.adoc  a.item { background-image: url(/images/app/mime/doc.png);}
-li.azip  a.item { background-image: url(/images/app/mime/zip.png);}
-li.atar  a.item { background-image: url(/images/app/mime/tar.png);}
-li.aimg  a.item { background-image: url(/images/app/mime/img.png);}
+li.apdf  a.item { background-image: url(../images/app/mime/pdf.png);}
+li.axls  a.item { background-image: url(../images/app/mime/xls.png);}
+li.adiff a.item { background-image: url(../images/app/mime/diff.png);}
+li.atxt  a.item { background-image: url(../images/app/mime/txt.png);}
+li.adoc  a.item { background-image: url(../images/app/mime/doc.png);}
+li.azip  a.item { background-image: url(../images/app/mime/zip.png);}
+li.atar  a.item { background-image: url(../images/app/mime/tar.png);}
+li.aimg  a.item { background-image: url(../images/app/mime/img.png);}
 
 
 /* Sidebar attachments  */
@@ -2864,7 +2864,7 @@ td.tnum a {
   left: 0;
   top: 6px;
   text-indent: -9999px;
-  background: url(/images/app/icons/add.png) no-repeat;
+  background: url(../images/app/icons/add.png) no-repeat;
 }
 
 #attach-fields a.rem {
@@ -2872,7 +2872,7 @@ td.tnum a {
 }
 
 #attach-fields a.rem  {
-  background: url(/images/app/icons/remove.png) no-repeat;
+  background: url(../images/app/icons/remove.png) no-repeat;
 }
 
 
@@ -2981,7 +2981,7 @@ a.set-perm-btn {
 
 #users ul {
   margin-left: 20px;
-  list-style-image: url(/images/app/bullet.gif);
+  list-style-image: url(../images/app/bullet.gif);
   font-size: 92%;
   color: #777;
   line-height: 180%;
@@ -3181,9 +3181,9 @@ li.bloc {
   margin-right: 5px;
 }
 
-span.cs-m, span.cs-u, span.cs-e { background: url(/images/app/icons/m.png) no-repeat; }
-span.cs-d { background: url(/images/app/icons/d.png) no-repeat;}
-span.cs-a { background: url(/images/app/icons/a.png) no-repeat;}
+span.cs-m, span.cs-u, span.cs-e { background: url(../images/app/icons/m.png) no-repeat; }
+span.cs-d { background: url(../images/app/icons/d.png) no-repeat;}
+span.cs-a { background: url(../images/app/icons/a.png) no-repeat;}
 
 /* @end */
 
@@ -3358,7 +3358,7 @@ span.cs-a { background: url(/images/app/icons/a.png) no-repeat;}
   line-height: 100%;
   height: 23px;
   padding: 3px;
-  background: #f7f7f7 url(/images/app/ddownarrow.gif) no-repeat;
+  background: #f7f7f7 url(../images/app/ddownarrow.gif) no-repeat;
   background-position: 98% 6px;
   color: #555;
   border: 1px solid #eee;
@@ -3374,7 +3374,7 @@ span.cs-a { background: url(/images/app/icons/a.png) no-repeat;}
 }
 
 #assigned-user:hover {
-  background: #eee url(/images/app/ddownarrow.gif) no-repeat;
+  background: #eee url(../images/app/ddownarrow.gif) no-repeat;
   background-position: 98% -26px;
   border-color: #bbb;
 }
@@ -3832,7 +3832,7 @@ div#modal_loading {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px; 
-  background: #eee url(/images/app/icons/preview.png) 3px 50% no-repeat;
+  background: #eee url(../images/app/icons/preview.png) 3px 50% no-repeat;
   padding: 3px 6px 3px 20px;
   margin-top: -9px;
 }
@@ -4193,7 +4193,7 @@ ul.inline-form li {
 
 span.select {
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
-  background: #ccc url(/images/select-bg.gif) repeat-x;
+  background: #ccc url(../images/select-bg.gif) repeat-x;
   border: 1px solid #aaa;
   border-bottom-color: #777;
   -webkit-border-radius: 2px;
@@ -4254,7 +4254,7 @@ p.btns:after {
 .button {
   display: block;
   min-width: 99px;
-  background: #fff url(/images/app/btn-shader.png) 0 100% repeat-x;
+  background: #fff url(../images/app/btn-shader.png) 0 100% repeat-x;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -4280,7 +4280,7 @@ a.button {
 }
 
 .button.jumbo {
-  background: #fff url(/images/app/btn-shader-big.png) 0 100% repeat-x;
+  background: #fff url(../images/app/btn-shader-big.png) 0 100% repeat-x;
   height: 35px;
 }
 
@@ -4448,7 +4448,7 @@ a.button {
 #plans thead th a {
   display: block;
   text-indent: -9999px;
-  background: url(/images/signup-btn.gif) no-repeat;
+  background: url(../images/signup-btn.gif) no-repeat;
   width: 63px;
   height: 22px;
   margin-top: 4px;
@@ -4523,7 +4523,7 @@ div.recommended span {
   position: absolute;
   top: -63px;
   padding-bottom: 9px;
-  background: url(/images/plans/recommended-bit-top.gif) 50% 100% no-repeat;
+  background: url(../images/plans/recommended-bit-top.gif) 50% 100% no-repeat;
 }
 
 #plans td.recommended {
@@ -4626,7 +4626,7 @@ a.mpdf {
   font-weight: bold;
   color: #c00;
   display: block;
-  background: url(/images/app/mime/pdf.png) 0 50% no-repeat;
+  background: url(../images/app/mime/pdf.png) 0 50% no-repeat;
 }
 
 a.mpdf:hover {
@@ -4651,7 +4651,7 @@ ul.hoder li.bit-input input.maininput { margin: 0; }
 #apple-list ul.holder li.bit-input input.smallinput { width: 5px; }
 ul.holder li.bit-hover { background: #BBCEF1; border: 1px solid #6D95E0; }
 ul.holder li.bit-box-focus { border-color: #598BEC; background: #598BEC; color: #fff; }
-ul.holder li.bit-box a.closebutton { position: absolute; right: 4px; top: 5px; display: block; width: 7px; height: 7px; font-size: 1px; background: url(/images/app/close.gif); }
+ul.holder li.bit-box a.closebutton { position: absolute; right: 4px; top: 5px; display: block; width: 7px; height: 7px; font-size: 1px; background: url(../images/app/close.gif); }
 ul.holder li.bit-box a.closebutton:hover { background-position: 7px; }
 ul.holder li.bit-box-focus a.closebutton, ul.holder li.bit-box-focus a.closebutton:hover { background-position: bottom; }
 
