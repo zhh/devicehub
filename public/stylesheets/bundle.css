@@ -1193,12 +1193,12 @@ li.event ul li {
 
 .sbar-btn {
   display: block;
-  background: url(/images/app/button-right.png) top right no-repeat;
+  background: url(../images/app/button-right.png) top right no-repeat;
 }
 
 .sbar-btn a {
   display: block;
-  background: url(/images/app/button-left.png) no-repeat;
+  background: url(../images/app/button-left.png) no-repeat;
   line-height: 280%;
   margin: 0 5px 9px 0;
   text-align: center;
