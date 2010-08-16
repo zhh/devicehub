@@ -24,7 +24,7 @@ class AreasController < ApplicationController
 
   def edit
     @nav = "areas_overview"
-    @action = "area_destroy"
+    @action = "area_destroy_move"
     @area = Area.find(params[:id])
     @project = @area.project
     @destroy_obj = @area

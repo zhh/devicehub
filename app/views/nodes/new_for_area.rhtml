@@ -1,6 +1,6 @@
 <% content_for :page_top do %>
   <div class="greet clear">
-    <h2><%= @area.project.name + ":" + @area.name %></h2>
+    <h2><%= @area.project.name + ":" %><%= link_to @area.name, :action => 'list_for_area', :id => @area %></h2>
     <p class="gmeta"><%= @area.description %></p>
     <div class="gdesc"></div>
   </div>
