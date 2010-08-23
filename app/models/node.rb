@@ -1,6 +1,7 @@
 class Node < ActiveRecord::Base
   belongs_to :area
   belongs_to :user
+  has_many :devices
 
   validates_presence_of :name, :description, :area_id  
   validates_uniqueness_of :name

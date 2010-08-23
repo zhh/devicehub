@@ -1,6 +1,13 @@
 class DevicesController < ApplicationController
   layout 'base'
 
+  def overview
+    @nav = "devices_overview"
+    @action = "device_new"
+    @project = Project.find(params[:id])
+    @devices = Device.find_all_project_devices(@project)
+  end
+
   def index
     render :action => 'new_devicetype'
   end

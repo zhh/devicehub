@@ -147,6 +147,12 @@ msgstr "修改节点"
 msgid "device"
 msgstr "设备"
 
+msgid "Device|Name"
+msgstr "设备名称"
+
+msgid "Device|Description"
+msgstr "设备描述"
+
 msgid "Create A New Device"
 msgstr "新建设备"
 

@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :areas
+  has_many :devices
 
   validates_presence_of :username, :password, :password_confirmation, :name
   validates_uniqueness_of :username, :name

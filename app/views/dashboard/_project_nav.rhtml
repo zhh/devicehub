@@ -58,10 +58,7 @@
       <li class="selected"><%= link_to _("Nodes"), :controller => 'nodes', :action => 'list', :id => @project %></li>
     <% end %>
 
-    <% if project_nav == "areanodes" %>
-      <li class="selected">      
-      <li><%= link_to _("Nodes"), :controller => 'nodes', :action => 'overview', :id => @project %></li>
-    <% end %>
+    <li><%= link_to _("Devices"), :controller => 'devices', :action => 'overview', :id => @project %></li>
  
 
   <li id="quick-search">
