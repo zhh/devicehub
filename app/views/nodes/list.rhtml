@@ -1,3 +1,13 @@
+<% if !@area.nil? %>
+<% content_for :page_top do %>
+  <div class="greet clear">
+    <h2><%= @area.name %></h2>
+    <p class="gmeta"><%= @area.description %></p>
+    <div class="gdesc"></div>
+  </div>
+<% end %>
+<% end %>
+
 <div id="ticket-list-wrapper" class="data-list hidden">
   <table cellspacing="0" cellpadding="0"  class="data issues">
     <thead>
@@ -19,9 +29,9 @@
         <td class="bulk_checkbox"><input class="edit-flag" id="edit_ticket_1682377" name="edit_ticket[]" type="checkbox" value="1" /></td>
         <td class="tnum" style="text-align:center"><a href="http://zhh.lighthouseapp.com/projects/52334/tickets/1-no1ticket">1</a></td>
         <td class="ttstate"><%= link_to node.name, :action => 'edit', :id => node %></td>
-        <td class="ttstate"><%= link_to '24', :controller => 'devices',:action => 'overview', :id => node %></td>
+        <td class="ttstate"><%= link_to node.devices.count, :controller => 'devices',:action => 'list_for_node', :id => node %></td>
         <td class="ttstate"><%= link_to node.area.name, :controller => 'nodes',:action => 'list_for_area', :id => node.area %></td>
-        <td class="ttstate"><%= link_to node.area.project.name, :controller => 'projects',:action => 'overview', :id => node.area.project %></td>
+        <td class="ttstate"><%= link_to node.area.project.name, :controller => 'nodes',:action => 'list', :id => node.area.project %></td>
         <td><%= node.description %></td>
         <td><%= node.user.name  %> </td>
         <td><%= node.created_at.to_date %></td>

@@ -1,11 +1,11 @@
 class CreateDevices < ActiveRecord::Migration
   def self.up
     create_table :devices do |t|
-      t.column :name, :string
-      t.column :description, :string
-      t.column :node_id, :integer
-      t.column :area_id, :integer
-      t.column :user_id, :integer
+      t.string :name
+      t.string :description
+      t.integer :node_id
+      t.integer :area_id
+      t.integer :user_id
       t.timestamps
     end
   end

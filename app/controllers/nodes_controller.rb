@@ -14,7 +14,7 @@ class NodesController < ApplicationController
     @nav = "nodes_overview"
     @action = "node_new"
     @project = Project.find(params[:id])
-    @nodes = Node.find_all_project_nodes(@project)
+    @nodes = Node.find_all_nodes_for_project(@project)
   end
 
   def list_for_area
@@ -22,6 +22,8 @@ class NodesController < ApplicationController
     @action = "node_new_for_area"
     @area = Area.find(params[:id])
     @project = @area.project
+    @nodes = Node.find_all_nodes_for_area(@area)
+    render :action => 'list'
   end 
 
   def new

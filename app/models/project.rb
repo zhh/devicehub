@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-  has_many :areas
+  has_many :areas  
 
   validates_presence_of :name, :description
   validates_uniqueness_of :name

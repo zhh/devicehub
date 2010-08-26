@@ -1,8 +1,0 @@
-<% form_for :devicetype do |f| %>
-  <%= render :partial => 'form', :locals => { :f => f } %>
-  <p class="btns" style="clear: left;">
-    <%= submit_tag "保存", :class => "submit" %>
-    或者
-    <%= link_to "取消", :action => "new" %>
-  </p>
-<% end %>

@@ -9,7 +9,11 @@ class Node < ActiveRecord::Base
   validates_length_of :name, :maximum => 30
   validates_length_of :description, :maximum => 255
 
-  def self.find_all_project_nodes(project)
+  def self.find_all_nodes_for_project(project)
     find_all_by_area_id(project.areas)
+  end
+
+  def self.find_all_nodes_for_area(area)
+    find_all_by_area_id(area)
   end
 end

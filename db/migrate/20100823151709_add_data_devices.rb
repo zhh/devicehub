@@ -10,11 +10,12 @@ class AddDataDevices < ActiveRecord::Migration
     Device.create(
       :name => 'Google Hero手机',
       :description => '好哇',
-      :area_id => 19,
+      :area_id => 23,
       :user_id => 1
     )
   end
 
   def self.down
+    Device.delete_all
   end
 end
