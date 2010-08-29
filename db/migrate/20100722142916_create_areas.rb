@@ -1,10 +1,11 @@
 class CreateAreas < ActiveRecord::Migration
   def self.up
     create_table :areas do |t|
-      t.column :name, :string      
-      t.column :description, :string
-      t.column :project_id, :integer
-      t.column :user_id, :integer
+      t.string :name
+      t.string :description
+      t.integer :tag, :default => 1
+      t.integer :project_id
+      t.integer :user_id
       t.timestamps
     end
   end

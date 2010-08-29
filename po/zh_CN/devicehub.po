@@ -63,9 +63,6 @@ msgstr "新建成功"
 msgid "Update Success"
 msgstr "修改成功"
 
-msgid "Move Success"
-msgstr "移动成功"
-
 msgid "Destroy Success"
 msgstr "删除成功"
 
@@ -105,8 +102,17 @@ msgstr "删除项目失败，必须删除该项目的所有区域（库）才能
 msgid "area"
 msgstr "区域(库)"
 
+msgid "area_area"
+msgstr "区域"
+
+msgid "area_warehouse"
+msgstr "库"
+
 msgid "Area|Name"
 msgstr "区域(库)名称"
+
+msgid "Area|Tag"
+msgstr "区域(库)标示"
 
 msgid "Area|Description"
 msgstr "区域(库)描述"
@@ -119,6 +125,9 @@ msgstr "修改区域(库)"
 
 msgid "Move A Area"
 msgstr "移动区域(库)"
+
+msgid "area_move_to_warehouse_fail_for_nodes"
+msgstr "区域变更为库失败，必须移除该区域的所有节点才能变更为库！"
 
 msgid "area_destroy_fail_for_nodes"
 msgstr "删除区域(库)失败，必须删除该区域(库)的所有节点才能删除区域(库)！"
@@ -143,6 +152,12 @@ msgstr "新建节点"
 msgid "Modify A Node"
 msgstr "修改节点"
 
+msgid "Move A Node"
+msgstr "移动节点"
+
+msgid "node_destroy_fail_for_devices"
+msgstr "删除节点失败，必须删除该节点的所有设备才能删除节点！"
+
 #Device-------------------------------------------------
 msgid "device"
 msgstr "设备"
@@ -153,11 +168,26 @@ msgstr "设备名称"
 msgid "Device|Description"
 msgstr "设备描述"
 
+msgid "Device|Area"
+msgstr "设备区域(库)"
+
+msgid "Device|Node"
+msgstr "设备节点"
+
 msgid "Create A New Device"
 msgstr "新建设备"
 
-msgid "Modify A New Device"
+msgid "Modify A Device"
 msgstr "修改设备"
+
+msgid "Move A Device"
+msgstr "移动设备"
+
+msgid "Please select a area"
+msgstr "请选择一个区域（库）"
+
+msgid "Please select a node"
+msgstr "请选择一个节点"
 
 #Message-------------------------------------------------
 msgid "message"

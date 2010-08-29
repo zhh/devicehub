@@ -1,6 +1,14 @@
+<% content_for :page_top do %>
+  <div class="greet clear">
+    <h2><%= @area.name %></h2>
+    <p class="gmeta"><%= @area.description %></p>
+    <div class="gdesc"></div>
+  </div>
+<% end %>
+
 <%= error_messages_for 'node' %>
 <div class="group">
-  <h3><%= _("Modify A Node") %></h3>
+  <h3><%= _("Move A Node") %></h3>
   <% form_for :node, :url => { :action => :move }, :html => { :class => "new_project" } do |f| %>
     <%= render :partial => 'form_move', :locals => { :f => f } %>
     <p class="btns right">

@@ -6,6 +6,7 @@ class Area < ActiveRecord::Base
 
   validates_presence_of :name, :description
   validates_uniqueness_of :name
+  validates_inclusion_of :tag, :in => [0,1]
   validates_inclusion_of :project_id, :in => Project.all.map{ |a| a.id }
   validates_length_of :name, :maximum => 30
   validates_length_of :description, :maximum => 255
@@ -28,6 +29,15 @@ class Area < ActiveRecord::Base
       areas << [pa.name, pa.id]
     end
     areas
+  end
+
+  def tag_s
+    self.tag == 1 ? _("area_area") : _("area_warehouse")
+  end
+
+  #区域变更为库之前验证区域下是否有节点
+  def before_update
+    raise _("area_move_to_warehouse_fail_for_nodes") unless self.nodes.empty?
   end
 
   #删除区域前检查该区域的节点是否为空

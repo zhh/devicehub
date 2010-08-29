@@ -1,0 +1,20 @@
+<% content_for :page_top do %>
+  <div class="greet clear">
+    <h2><%= @device.area.name %><%= ":" + @device.node.name if @device.node %></h2>
+    <p class="gmeta">
+      <%= @device.node ? @device.node.description : @device.area.description %>
+    </p>
+    <div class="gdesc"></div>
+  </div>
+<% end %>
+
+<%= error_messages_for 'device' %>
+<div class="group">
+  <h3><%= _("Modify A Device") %></h3>
+  <% form_for :device, :url => { :action => :edit }, :html => { :class => "new_project" } do |f| %>
+    <%= render :partial => 'form_for_edit', :locals => { :f => f } %>
+    <p class="btns right">
+      <%= submit_tag _("Save"), :class => "button", :disable_with => _("Saving") %>
+    </p>
+  <% end %>
+</div>

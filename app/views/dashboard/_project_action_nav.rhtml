@@ -36,4 +36,13 @@
     <li class="destructive"><%= link_to _("Delete"), '#', {:onclick => "Effect.toggle('delete-diag', 'blind'); return false;; return false;"} %></li>
     <li class="destructive"><%= link_to _("Move"), :controller => :nodes, :action => 'move', :id => @node %></li>
   <% end %>
+
+  <% if project_action_nav == "device_new" %>
+    <li><%= link_to _("Create A New Device"), :controller => :devices, :action => 'new', :id => @project %></li>
+  <% end %>
+
+  <% if project_action_nav == "device_destroy_move" %>
+    <li class="destructive"><%= link_to _("Delete"), '#', {:onclick => "Effect.toggle('delete-diag', 'blind'); return false;; return false;"} %></li>
+    <li class="destructive"><%= link_to _("Move"), :controller => :devices, :action => 'move', :id => @device %></li>
+  <% end %>
 </ul>

@@ -31,6 +31,7 @@
       <li class="selected"><%= link_to _("Projects"), :controller => 'projects', :action => 'index' %></li>
       <li><%= link_to _("Areas"), :controller => 'areas', :action => 'overview', :id => @project %></li>
       <li><%= link_to _("Nodes"), :controller => 'nodes', :action => 'list', :id => @project %></li>
+      <li><%= link_to _("Devices"), :controller => 'devices', :action => 'list', :id => @project %></li>
     <% end %>
 
 
@@ -44,6 +45,7 @@
       <li><%= link_to _("Projects"), :controller => 'projects', :action => 'index' %></li>
       <li class="selected"><%= link_to _("Areas"), :controller => 'areas', :action => 'overview', :id => @project %></li>
       <li><%= link_to _("Nodes"), :controller => 'nodes', :action => 'list', :id => @project %></li>
+      <li><%= link_to _("Devices"), :controller => 'devices', :action => 'list', :id => @project %></li>
     <% end %>
 
     <% if project_nav == "nodes_overview" %>
@@ -56,9 +58,21 @@
       <li><%= link_to _("Projects"), :controller => 'projects', :action => 'index' %></li>
       <li><%= link_to _("Areas"), :controller => 'areas', :action => 'overview', :id => @project %></li>
       <li class="selected"><%= link_to _("Nodes"), :controller => 'nodes', :action => 'list', :id => @project %></li>
+      <li><%= link_to _("Devices"), :controller => 'devices', :action => 'list', :id => @project %></li>
     <% end %>
 
-    <li><%= link_to _("Devices"), :controller => 'devices', :action => 'list', :id => @project %></li>
+    <% if project_nav == "devices_list" %>
+      <li id="t-proj" class="submenu-tab">
+        <%= link_to _("Overview") + "<em>more</em>", :controller => 'dashboard', :action => 'index' %>
+        <ul style="display: none;" class="submenu">
+          <%= render :partial => 'dashboard/nav_project_list', :collection => @projectlist %>
+        </ul>
+      </li>
+      <li><%= link_to _("Projects"), :controller => 'projects', :action => 'index' %></li>
+      <li><%= link_to _("Areas"), :controller => 'areas', :action => 'overview', :id => @project %></li>
+      <li><%= link_to _("Nodes"), :controller => 'nodes', :action => 'list', :id => @project %></li>
+      <li class="selected"><%= link_to _("Devices"), :controller => 'devices', :action => 'list', :id => @project %></li>
+    <% end %>
  
 
   <li id="quick-search">

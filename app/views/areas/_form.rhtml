@@ -5,6 +5,13 @@
       <td><%= f.text_field :name, :class => "big", :size => 30 %></td>
     </tr>
     <tr>
+      <th><label for="area_tag"><%= _("Area|Tag") %></label></th>
+      <td>
+        <%= f.radio_button :tag, "1" %><%= _("area_area") %>&nbsp;&nbsp;
+        <%= f.radio_button :tag, "0" %><%= _("area_warehouse") %>
+      </td>
+    </tr>
+    <tr>
       <th><label for="area_description"><%= _("Area|Description") %></label></th>
       <td><%= f.text_area :description, :cols => 55, :rows => 10 %></td>
     </tr>

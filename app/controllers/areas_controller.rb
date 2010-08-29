@@ -28,22 +28,19 @@ class AreasController < ApplicationController
     @area = Area.find(params[:id])
     @project = @area.project
     @destroy_obj = @area
-    if request.post? and @area.update_attributes(params[:area])
-      flash[:notice] = _("Update Success")
-      redirect_to :action => :overview, :id => @project
+    if request.post?
+      begin
+        @area.update_attributes(params[:area])
+        flash[:notice] = _("Update Success")
+        redirect_to :action => 'overview', :id => @project
+      rescue Exception => e
+        flash[:errors] = e.message
+      end
     end
   end
 
   def move
-    @nav = "areas_overview"
-    @action = "area_destroy_move"
-    @area = Area.find(params[:id])
-    @project = @area.project
-    @destroy_obj = @area
-    if request.post? and @area.update_attributes(params[:area])
-      flash[:notice] = _("Move Success")
-      redirect_to :action => :overview, :id => @project
-    end
+    edit
   end
 
   def destroy
@@ -57,6 +54,6 @@ class AreasController < ApplicationController
       end      
       #      logger.info("#{Time.now} 删除 项目 ID ##{project.id}!")
     end
-    redirect_to :action => :overview, :id => area.project
+    redirect_to :action => 'overview', :id => area.project
   end
 end

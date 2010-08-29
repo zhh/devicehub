@@ -5,6 +5,7 @@
         <th class="bulk_check_header"><input type="checkbox" id="edit-all-toggle" /></th>
         <th class="hfirst" style="width:25px;text-align:center"><a href="" class="">#</a></th>
         <th><%= link_to _("Area|Name"), :action => '' %></th>
+        <th><%= link_to _("Area|Tag"), :action => '' %></th>
         <th><%= link_to _("node"), :action => '' %></th>
         <th><%= link_to _("device"), :action => '' %></th>        
         <th><%= link_to _("Area|Description"), :action => '' %></th>
@@ -18,6 +19,7 @@
         <td class="bulk_checkbox"><input class="edit-flag" id="edit_ticket_1682377" name="edit_ticket[]" type="checkbox" value="1" /></td>
         <td class="tnum" style="text-align:center"><a href="http://zhh.lighthouseapp.com/projects/52334/tickets/1-no1ticket">1</a></td>
         <td class="ttstate"><%= link_to area.name, :action => 'edit', :id => area %></td>
+        <td class="ttstate"><%= link_to area.tag_s, :action => '', :id => area %></td>
         <td class="ttstate"><%= link_to area.nodes.count, :controller => 'nodes', :action => 'list_for_area', :id => area %></td>
         <td class="ttstate"><%= link_to area.devices.count, :controller => 'devices', :action => 'list_for_area', :id => area %></td>
         <td><%= area.description %></td>

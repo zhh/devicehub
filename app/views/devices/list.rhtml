@@ -18,8 +18,8 @@
         <td class="bulk_checkbox"><input class="edit-flag" id="edit_ticket_1682377" name="edit_ticket[]" type="checkbox" value="1" /></td>
         <td class="tnum" style="text-align:center"><a href="http://zhh.lighthouseapp.com/projects/52334/tickets/1-no1ticket">1</a></td>
         <td class="ttstate"><%= link_to device.name, :action => 'edit', :id => device %></td>
-        <td class="ttstate"><%= link_to device.node.name, :action => '', :id => device.node if !device.node.nil? %></td>
-        <td class="ttstate"><%= link_to device.area.name, :action => '', :id => device.area %></td>
+        <td class="ttstate"><%= link_to device.node.name, :action => 'list_for_node', :id => device.node if device.node %></td>
+        <td class="ttstate"><%= link_to device.area.name, :action => 'list_for_area', :id => device.area %></td>
         <td><%= device.description %></td>
         <td><%= device.user.name  %> </td>
         <td><%= device.created_at %></td>

@@ -60,21 +60,12 @@ class NodesController < ApplicationController
     @destroy_obj = @node
     if request.post? and @node.update_attributes(params[:node])
       flash[:notice] = _("Update Success")      
-      redirect_to :action => :list_for_area, :id => @area
+      redirect_to :action => 'list_for_area', :id => @area
     end
   end
 
   def move
-    @nav = "nodes_overview"
-    @action = "node_destroy_move"
-    @node = Node.find(params[:id])
-    @area = @node.area
-    @project = @area.project
-    @destroy_obj = @node
-    if request.post? and @node.update_attributes(params[:node])
-      flash[:notice] = _("Update Success")
-      redirect_to :action => :list_for_area, :id => @area
-    end
+    edit
   end
 
   def destroy
@@ -85,5 +76,9 @@ class NodesController < ApplicationController
 #      logger.info("#{Time.now} 删除 项目 ID ##{project.id}!")
     end    
     redirect_to :action => :list, :id => node.area.project
+  end
+
+  def before_destroy
+    raise _("node_destroy_fail_for_devices") unless self.devices.empty?
   end
 end

@@ -1,0 +1,24 @@
+<table class="form-tbl" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <th><label for="area_id"><%= _("Device|Area") %></label></th>
+      <td><%= f.select :area_id, @areas, {:prompt => _("Please select a area")},
+          { "onchange" => remote_function(
+            :with => "'area_id='+value",
+            :update => 'node_select',
+            :url => { :action => 'node_select' } ) } %></td>
+    </tr>
+    <tr>  
+      <th><label for="node_id"><%= _("Device|Node") %></label></th>
+      <td><div id="node_select"><%= f.select :node_id, @nodes, {:prompt => _("Please select a node")} %></div></td>
+    </tr>
+    <tr>
+      <th><label for="device_name"><%= _("Device|Name") %></label></th>
+      <td><%= f.text_field :name, :class => "big", :size => 30 %></td>
+    </tr>
+    <tr>
+      <th><label for="device_description"><%= _("Device|Description") %></label></th>
+      <td><%= f.text_area :description, :cols => 55, :rows => 10 %></td>
+    </tr>
+  </tbody>
+</table>
