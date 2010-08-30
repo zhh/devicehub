@@ -54,9 +54,6 @@ msgstr "保存"
 msgid "Saving"
 msgstr "正在保存"
 
-msgid "Move to"
-msgstr "移动到"
-
 msgid "Created Success"
 msgstr "新建成功"
 
@@ -146,6 +143,9 @@ msgstr "节点描述"
 msgid "Node|Area"
 msgstr "节点区域(库)"
 
+msgid "Node|Area_area"
+msgstr "节点区域"
+
 msgid "Create A New Node"
 msgstr "新建节点"
 
@@ -154,6 +154,9 @@ msgstr "修改节点"
 
 msgid "Move A Node"
 msgstr "移动节点"
+
+msgid "Please select a area_1"
+msgstr "请选择一个区域"
 
 msgid "node_destroy_fail_for_devices"
 msgstr "删除节点失败，必须删除该节点的所有设备才能删除节点！"

@@ -30,7 +30,7 @@ class DevicesController < ApplicationController
     @nav = "devices_list"
     @action = "device_new"
     @project = Project.find(params[:id])
-    @areas = Area.project_areas_to_array(@project)    
+    @areas = Area.project_areas_to_array(@project)
     @nodes = []
     @device = Device.new(params[:device])
     @device.user_id = 1

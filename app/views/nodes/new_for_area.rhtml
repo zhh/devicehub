@@ -10,7 +10,7 @@
 <div class="group">
   <h3><%= _("Create A New Node") %></h3>
   <% form_for :node, :url => { :action => :new_for_area }, :html => { :class => "new_project" } do |f| %>
-    <%= render :partial => 'form_for_area', :locals => { :f => f } %>
+    <%= render :partial => 'form', :locals => { :f => f } %>
     <p class="btns right">
       <%= submit_tag _("Save"), :class => "button", :disable_with => _("Saving") %>
     </p>

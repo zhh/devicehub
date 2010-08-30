@@ -19,7 +19,7 @@ class NodesController < ApplicationController
 
   def list_for_area
     @nav = "nodes_overview"
-    @action = "node_new_for_area"
+    @action = "node_new"
     @area = Area.find(params[:id])
     @project = @area.project
     @nodes = Node.find_all_nodes_for_area(@area)
@@ -30,7 +30,8 @@ class NodesController < ApplicationController
     @nav = "nodes_overview"
     @action = "node_new"
     @project = Project.find(params[:id])
-    @node = Node.new(params[:node])
+    @areas = Area.project_areas_area_to_array(@project)
+    @node = Node.new(params[:node])    
     @node.user_id = 1
     if request.post? and @node.save
       flash[:notice] = _("node") + " #{@node.name} " + _("Created Success")
@@ -57,6 +58,7 @@ class NodesController < ApplicationController
     @node = Node.find(params[:id])
     @area = @node.area
     @project = @area.project
+    @areas = Area.project_areas_area_to_array(@project)
     @destroy_obj = @node
     if request.post? and @node.update_attributes(params[:node])
       flash[:notice] = _("Update Success")      
@@ -64,7 +66,7 @@ class NodesController < ApplicationController
     end
   end
 
-  def move
+  def move    
     edit
   end
 

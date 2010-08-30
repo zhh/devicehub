@@ -16,14 +16,14 @@ class Area < ActiveRecord::Base
     find(:all, :order => 'created_at desc')
   end
 
-  #查询指定项目的区域
+  #查询指定项目的区域(库)
   def self.find_all_project_areas(project)
     find_all_by_project_id(project)
   end
 
-  #获取一个项目的区域并生成一个数组
+  #获取一个项目的区域(库)并生成一个数组
   def self.project_areas_to_array(project)
-    pas = find_all_project_areas(project)
+    pas = find_all_by_project_id(project, :order => "tag desc")
     areas = []
     pas.each do |pa|
       areas << [pa.name, pa.id]
@@ -31,6 +31,17 @@ class Area < ActiveRecord::Base
     areas
   end
 
+  #获取一个项目的区域(不包括库)并生成一个数组
+  def self.project_areas_area_to_array(project)
+    pas = find_all_by_project_id(project, :conditions => [" tag = 1 "])
+    areas = []
+    pas.each do |pa|
+      areas << [pa.name, pa.id]
+    end
+    areas
+  end
+
+  #区域(库)标示显示为明文
   def tag_s
     self.tag == 1 ? _("area_area") : _("area_warehouse")
   end

@@ -1,8 +1,8 @@
 <table class="form-tbl" cellpadding="0" cellspacing="0">
   <tbody>
     <tr>
-      <th><label for="area_project_id"><%= _("Move to") %></label></th>
-      <td><%= f.select :project_id, Project.projects_to_array %></td>
+      <th><label for="area_project_id"><%= _("project") %></label></th>
+      <td><%= f.select :project_id, @projects %></td>
     </tr>
     <tr>
       <th><label for="area_name"><%= _("Area|Name") %></label></th>

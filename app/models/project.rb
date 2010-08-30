@@ -11,6 +11,7 @@ class Project < ActiveRecord::Base
     find(:all, :order => order)
   end
 
+  #生成项目数组
   def self.projects_to_array
     ps = find(:all)
     projects = []

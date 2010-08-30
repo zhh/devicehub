@@ -27,6 +27,7 @@ class AreasController < ApplicationController
     @action = "area_destroy_move"
     @area = Area.find(params[:id])
     @project = @area.project
+    @projects = Project.projects_to_array
     @destroy_obj = @area
     if request.post?
       begin
