@@ -7,7 +7,7 @@ class Area < ActiveRecord::Base
   validates_presence_of :name, :description
   validates_uniqueness_of :name
   validates_inclusion_of :tag, :in => [0,1]
-  validates_inclusion_of :project_id, :in => Project.all.map{ |a| a.id }
+  #validates_inclusion_of :project_id, :in => Project.all.map{ |a| a.id }
   validates_length_of :name, :maximum => 30
   validates_length_of :description, :maximum => 255
 
