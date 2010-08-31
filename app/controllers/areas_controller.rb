@@ -16,7 +16,8 @@ class AreasController < ApplicationController
     @project = Project.find(params[:id])    
     @area = Area.new(params[:area])
     @area.user_id = 1
-    if request.post? and @project.areas << @area
+    @area.project = @project
+    if request.post? and @area.save
       flash[:notice] = _("area") + " #{@area.name} " + _("Created Success")
       redirect_to :action => :overview, :id => @project
     end
